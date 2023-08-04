@@ -12,20 +12,58 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="StartCollectionViewCell" id="gTV-IL-0wX" customClass="StartCollectionViewCell" customModule="Recap" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+            <rect key="frame" x="0.0" y="0.0" width="306" height="307"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                <rect key="frame" x="0.0" y="0.0" width="306" height="307"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="afE-8e-Wrp">
+                        <rect key="frame" x="0.0" y="0.0" width="306" height="307"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ody-eg-PBY">
+                                <rect key="frame" x="132.33333333333334" y="277" width="41.333333333333343" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Odf-Ft-67f"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NTg-03-A0Z">
+                                <rect key="frame" x="0.0" y="0.0" width="306" height="271"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="NTg-03-A0Z" firstAttribute="top" secondItem="afE-8e-Wrp" secondAttribute="top" id="5rM-1n-oxg"/>
+                            <constraint firstItem="ody-eg-PBY" firstAttribute="top" secondItem="NTg-03-A0Z" secondAttribute="bottom" constant="6" id="KE2-Dh-E2v"/>
+                            <constraint firstItem="NTg-03-A0Z" firstAttribute="leading" secondItem="afE-8e-Wrp" secondAttribute="leading" id="b61-mx-y0G"/>
+                            <constraint firstItem="ody-eg-PBY" firstAttribute="centerX" secondItem="afE-8e-Wrp" secondAttribute="centerX" id="f9e-qf-IPh"/>
+                            <constraint firstAttribute="bottom" secondItem="ody-eg-PBY" secondAttribute="bottom" id="lu9-xK-Y2m"/>
+                            <constraint firstAttribute="trailing" secondItem="NTg-03-A0Z" secondAttribute="trailing" id="myE-k0-w3g"/>
+                        </constraints>
+                    </view>
+                </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
-            <color key="backgroundColor" systemColor="systemBrownColor"/>
-            <point key="canvasLocation" x="132" y="-11"/>
+            <constraints>
+                <constraint firstItem="afE-8e-Wrp" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="1jx-pS-NQg"/>
+                <constraint firstItem="afE-8e-Wrp" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Kgx-fD-F9I"/>
+                <constraint firstAttribute="trailing" secondItem="afE-8e-Wrp" secondAttribute="trailing" id="paa-MZ-5hT"/>
+                <constraint firstAttribute="bottom" secondItem="afE-8e-Wrp" secondAttribute="bottom" id="pgI-2L-dta"/>
+            </constraints>
+            <size key="customSize" width="306" height="307"/>
+            <connections>
+                <outlet property="nameLabel" destination="ody-eg-PBY" id="lFE-YG-uai"/>
+                <outlet property="thumbImageView" destination="NTg-03-A0Z" id="kzn-iR-G0v"/>
+            </connections>
+            <point key="canvasLocation" x="326.71755725190837" y="79.225352112676063"/>
         </collectionViewCell>
     </objects>
     <resources>
-        <systemColor name="systemBrownColor">
-            <color red="0.63529411764705879" green="0.51764705882352946" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
 </document>

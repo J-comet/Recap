@@ -13,13 +13,17 @@ class StartVC: UIViewController, BaseViewControllerProtocol {
     
     @IBOutlet var collectionView: UICollectionView!
     
-    var list: [Tamagotchi] = [Tamagotchi(idx: 0),Tamagotchi(idx: 1),Tamagotchi(idx: 2),Tamagotchi(idx: 3),Tamagotchi(idx: 4),Tamagotchi(idx: 5),Tamagotchi(idx:6)]
+    var list: [Tamagotchi] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configNavigationBar()
         designVC()
         configVC()
+        
+        for _ in 0..<20 {
+            list.append(Tamagotchi(type: .ready, name: .ready, description: .twinkle, level: .lv1, rice: 1, water: 1))
+        }
     }
     
     func configNavigationBar() {
