@@ -9,8 +9,8 @@ import Foundation
 
 @objc
 protocol BaseViewControllerProtocol {
+    static var identifier: String { get }
     @objc optional func configNavigationBar()
-    @objc optional func configDelegate()
     func designVC()
     func configVC()
 }
