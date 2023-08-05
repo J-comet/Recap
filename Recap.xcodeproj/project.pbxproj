@@ -11,6 +11,8 @@
 		C0069AE32A7CD720005E8128 /* StartCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0069AE12A7CD720005E8128 /* StartCollectionViewCell.xib */; };
 		C0069AE52A7CD8DD005E8128 /* Protocol+CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0069AE42A7CD8DD005E8128 /* Protocol+CollectionViewCell.swift */; };
 		C0069AE82A7CDD88005E8128 /* Tamagotchi.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0069AE72A7CDD88005E8128 /* Tamagotchi.swift */; };
+		C0069AEB2A7CF039005E8128 /* Extensioni+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0069AEA2A7CF039005E8128 /* Extensioni+UIColor.swift */; };
+		C0069AED2A7DE9A1005E8128 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0069AEC2A7DE9A1005E8128 /* Main.storyboard */; };
 		C00F2DEE2A7CBAAC004729B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00F2DED2A7CBAAC004729B9 /* AppDelegate.swift */; };
 		C00F2DF02A7CBAAC004729B9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00F2DEF2A7CBAAC004729B9 /* SceneDelegate.swift */; };
 		C00F2DF22A7CBAAC004729B9 /* StartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00F2DF12A7CBAAC004729B9 /* StartVC.swift */; };
@@ -25,6 +27,8 @@
 		C0069AE12A7CD720005E8128 /* StartCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StartCollectionViewCell.xib; sourceTree = SOURCE_ROOT; };
 		C0069AE42A7CD8DD005E8128 /* Protocol+CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Protocol+CollectionViewCell.swift"; sourceTree = "<group>"; };
 		C0069AE72A7CDD88005E8128 /* Tamagotchi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tamagotchi.swift; sourceTree = "<group>"; };
+		C0069AEA2A7CF039005E8128 /* Extensioni+UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensioni+UIColor.swift"; sourceTree = "<group>"; };
+		C0069AEC2A7DE9A1005E8128 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		C00F2DEA2A7CBAAC004729B9 /* Recap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Recap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C00F2DED2A7CBAAC004729B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C00F2DEF2A7CBAAC004729B9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -64,6 +68,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		C0069AE92A7CF026005E8128 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				C0069AEA2A7CF039005E8128 /* Extensioni+UIColor.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		C00F2DE12A7CBAAC004729B9 = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +95,7 @@
 		C00F2DEC2A7CBAAC004729B9 /* Recap */ = {
 			isa = PBXGroup;
 			children = (
+				C0069AE92A7CF026005E8128 /* Extension */,
 				C0069AE62A7CDCC5005E8128 /* Model */,
 				C0069ADF2A7CD631005E8128 /* Cell */,
 				C00F2E032A7CD419004729B9 /* Protocol */,
@@ -109,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				C00F2DF32A7CBAAC004729B9 /* Start.storyboard */,
+				C0069AEC2A7DE9A1005E8128 /* Main.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -181,6 +195,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C00F2DFA2A7CBAAD004729B9 /* LaunchScreen.storyboard in Resources */,
+				C0069AED2A7DE9A1005E8128 /* Main.storyboard in Resources */,
 				C0069AE32A7CD720005E8128 /* StartCollectionViewCell.xib in Resources */,
 				C00F2DF72A7CBAAD004729B9 /* Assets.xcassets in Resources */,
 				C00F2DF52A7CBAAC004729B9 /* Start.storyboard in Resources */,
@@ -195,6 +210,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C0069AE52A7CD8DD005E8128 /* Protocol+CollectionViewCell.swift in Sources */,
+				C0069AEB2A7CF039005E8128 /* Extensioni+UIColor.swift in Sources */,
 				C00F2E052A7CD47D004729B9 /* Protocol+UIViewController.swift in Sources */,
 				C00F2DF22A7CBAAC004729B9 /* StartVC.swift in Sources */,
 				C0069AE82A7CDD88005E8128 /* Tamagotchi.swift in Sources */,

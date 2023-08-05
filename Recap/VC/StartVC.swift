@@ -22,7 +22,7 @@ class StartVC: UIViewController, BaseViewControllerProtocol {
         configVC()
         
         for _ in 0..<20 {
-            list.append(Tamagotchi(type: .ready, name: .ready, description: .twinkle, level: .lv1, rice: 1, water: 1))
+            list.append(Tamagotchi(type: .twinkle, name: .tingling, description: .twinkle, level: .lv8, rice: 1, water: 1))
         }
     }
     
@@ -43,15 +43,15 @@ class StartVC: UIViewController, BaseViewControllerProtocol {
     }
 
     private func setCollectionViewLayout() {
-        // 비율 계산해서 디바이스 별로 UI 설정
+        collectionView.showsVerticalScrollIndicator = false
         let layout = UICollectionViewFlowLayout()
         let spacing: CGFloat = 8
         let count: CGFloat = 3
         let width: CGFloat = UIScreen.main.bounds.width - (spacing * (count + 1)) // 디바이스 너비 계산
         
-        layout.itemSize = CGSize(width: width / count, height: width / count)
-        layout.sectionInset = UIEdgeInsets(top: spacing, left: spacing, bottom: spacing, right: spacing)  // 컨텐츠가 잘리지 않고 자연스럽게 표시되도록 여백설정
-        layout.minimumLineSpacing = spacing         // 셀과셀 위 아래 최소 간격
+        layout.itemSize = CGSize(width: width / count, height: (width / count) * 1.2)
+        layout.sectionInset = UIEdgeInsets(top: 20, left: spacing, bottom: 20, right: spacing)  // 컨텐츠가 잘리지 않고 자연스럽게 표시되도록 여백설정
+        layout.minimumLineSpacing = 20         // 셀과셀 위 아래 최소 간격
         layout.minimumInteritemSpacing = spacing    // 셀과셀 좌 우 최소 간격
         collectionView.collectionViewLayout = layout  // layout 교체
     }

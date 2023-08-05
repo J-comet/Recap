@@ -12,28 +12,39 @@ class StartCollectionViewCell: UICollectionViewCell, BaseCollectionViewCellProto
     typealias T = Tamagotchi
     static var identifier = "StartCollectionViewCell"
     
-    @IBOutlet var nameLabel: UILabel!
+    //    @IBOutlet var nameLabel: UILabel!
+    @IBOutlet var nameButton: UIButton!
     @IBOutlet var thumbImageView: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         designCell()
     }
-
+    
     func designCell() {
-        nameLabel.font = .boldSystemFont(ofSize: 13)
-        nameLabel.textAlignment = .center
-        nameLabel.textColor = UIColor(red: 77/255, green: 106/255, blue: 120/255, alpha: 1)
-        nameLabel.layer.cornerRadius = 8
-        nameLabel.layer.borderWidth = 2
-        nameLabel.layer.borderColor = UIColor(red: 77/255, green: 106/255, blue: 120/255, alpha: 1).cgColor
-        nameLabel.clipsToBounds = true
+        nameButton.layer.borderColor = MainColor.fontOrStroke.value.cgColor
+        nameButton.layer.cornerRadius = 6
+        nameButton.layer.borderWidth = 1
+        nameButton.clipsToBounds = true
+        
+        var config = UIButton.Configuration.filled()        // apple system button
+        config.baseForegroundColor = MainColor.fontOrStroke.value
+        config.baseBackgroundColor = MainColor.background.value
+        config.titleAlignment = .center
+        config.buttonSize = .mini
+        config.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 6, bottom: 0, trailing: 6)
+        nameButton.configuration = config
+        
+        thumbImageView.contentMode = .scaleAspectFit
     }
     
     func configureCell(row: Tamagotchi) {
-        nameLabel.text = row.name.rawValue
+        if row.name == TamagotchiName.ready {
+            nameButton.setTitle(row.name.rawValue, for: .normal)
+        } else {
+            nameButton.setTitle("\(row.name.rawValue) 다마고치", for: .normal)
+        }
         
-        // ex) "1-1", "1-2"
-        thumbImageView.image = UIImage(named: "1-1")
+        thumbImageView.image = UIImage(named: row.imgName)
     }
 }

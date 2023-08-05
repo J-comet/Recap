@@ -21,27 +21,28 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="afE-8e-Wrp">
                         <rect key="frame" x="0.0" y="0.0" width="306" height="307"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ody-eg-PBY">
-                                <rect key="frame" x="132.33333333333334" y="277" width="41.333333333333343" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="Odf-Ft-67f"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NTg-03-A0Z">
-                                <rect key="frame" x="0.0" y="0.0" width="306" height="271"/>
+                                <rect key="frame" x="0.0" y="0.0" width="306" height="266"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pkP-bk-yhO">
+                                <rect key="frame" x="134" y="272" width="38" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="f37-Cp-1pH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Button"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="pkP-bk-yhO" firstAttribute="top" secondItem="NTg-03-A0Z" secondAttribute="bottom" constant="6" id="0fH-fp-X97"/>
                             <constraint firstItem="NTg-03-A0Z" firstAttribute="top" secondItem="afE-8e-Wrp" secondAttribute="top" id="5rM-1n-oxg"/>
-                            <constraint firstItem="ody-eg-PBY" firstAttribute="top" secondItem="NTg-03-A0Z" secondAttribute="bottom" constant="6" id="KE2-Dh-E2v"/>
+                            <constraint firstItem="pkP-bk-yhO" firstAttribute="centerX" secondItem="afE-8e-Wrp" secondAttribute="centerX" id="5vD-BW-QZA"/>
+                            <constraint firstAttribute="bottom" secondItem="pkP-bk-yhO" secondAttribute="bottom" id="W8o-8l-QWR"/>
                             <constraint firstItem="NTg-03-A0Z" firstAttribute="leading" secondItem="afE-8e-Wrp" secondAttribute="leading" id="b61-mx-y0G"/>
-                            <constraint firstItem="ody-eg-PBY" firstAttribute="centerX" secondItem="afE-8e-Wrp" secondAttribute="centerX" id="f9e-qf-IPh"/>
-                            <constraint firstAttribute="bottom" secondItem="ody-eg-PBY" secondAttribute="bottom" id="lu9-xK-Y2m"/>
                             <constraint firstAttribute="trailing" secondItem="NTg-03-A0Z" secondAttribute="trailing" id="myE-k0-w3g"/>
+                            <constraint firstItem="pkP-bk-yhO" firstAttribute="centerX" secondItem="afE-8e-Wrp" secondAttribute="centerX" id="yOV-tC-P7s"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -55,7 +56,7 @@
             </constraints>
             <size key="customSize" width="306" height="307"/>
             <connections>
-                <outlet property="nameLabel" destination="ody-eg-PBY" id="lFE-YG-uai"/>
+                <outlet property="nameButton" destination="pkP-bk-yhO" id="MpL-nu-yYP"/>
                 <outlet property="thumbImageView" destination="NTg-03-A0Z" id="kzn-iR-G0v"/>
             </connections>
             <point key="canvasLocation" x="326.71755725190837" y="79.225352112676063"/>
