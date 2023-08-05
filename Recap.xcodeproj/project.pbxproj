@@ -27,6 +27,7 @@
 		C00F2DF72A7CBAAD004729B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C00F2DF62A7CBAAD004729B9 /* Assets.xcassets */; };
 		C00F2DFA2A7CBAAD004729B9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C00F2DF82A7CBAAD004729B9 /* LaunchScreen.storyboard */; };
 		C00F2E052A7CD47D004729B9 /* Protocol+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00F2E042A7CD47D004729B9 /* Protocol+UIViewController.swift */; };
+		C0A405002A7EBF3200C7C1CE /* TamagotchiRandomStory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A404FF2A7EBF3200C7C1CE /* TamagotchiRandomStory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		C00F2DF92A7CBAAD004729B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C00F2DFB2A7CBAAD004729B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C00F2E042A7CD47D004729B9 /* Protocol+UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Protocol+UIViewController.swift"; sourceTree = "<group>"; };
+		C0A404FF2A7EBF3200C7C1CE /* TamagotchiRandomStory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TamagotchiRandomStory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 				C0069AE72A7CDD88005E8128 /* Tamagotchi.swift */,
 				C0069AEE2A7E037C005E8128 /* TamagotchiInfo.swift */,
 				C0069AFC2A7E3911005E8128 /* UserInfo.swift */,
+				C0A404FF2A7EBF3200C7C1CE /* TamagotchiRandomStory.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -251,6 +254,7 @@
 				C0069AF32A7E079D005E8128 /* PopupSelectTamagotchiVC.swift in Sources */,
 				C0069AE22A7CD720005E8128 /* StartCollectionViewCell.swift in Sources */,
 				C0069AEF2A7E037C005E8128 /* TamagotchiInfo.swift in Sources */,
+				C0A405002A7EBF3200C7C1CE /* TamagotchiRandomStory.swift in Sources */,
 				C0069AF92A7E3508005E8128 /* Extension+View.swift in Sources */,
 				C00F2DF02A7CBAAC004729B9 /* SceneDelegate.swift in Sources */,
 			);

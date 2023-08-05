@@ -15,7 +15,6 @@ enum FeedType: String {
 class MainVC: UIViewController, BaseViewControllerProtocol {
     
     static var identifier = "MainVC"
-    let userInfo = UserDefaults.userInfo
     
     @IBOutlet var navBarUnderLine: UIView!
     
@@ -39,11 +38,19 @@ class MainVC: UIViewController, BaseViewControllerProtocol {
     @IBOutlet var waterButton: UIButton!
     @IBOutlet var waterTextField: UITextField!
     
+    let userInfo = UserDefaults.userInfo
+    let randomStoryList = TamagotchiRandomStory().list
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         designVC()
         configVC()
         configNavigationBar()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        randomContentLabel.text = randomStoryList.randomElement()!
     }
     
     func configNavigationBar() {
@@ -113,6 +120,8 @@ class MainVC: UIViewController, BaseViewControllerProtocol {
         
         randomContentLabel.font = .systemFont(ofSize: 15)
         randomContentLabel.textColor = .darkGray
+        randomContentLabel.numberOfLines = 0
+        randomContentLabel.lineBreakMode = .byWordWrapping
         
         nameStackView.designTamagotchiNameBorderLine()
         typeLabel.designTamagotchiName()
