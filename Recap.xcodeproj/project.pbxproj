@@ -15,8 +15,10 @@
 		C0069AEF2A7E037C005E8128 /* TamagotchiInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0069AEE2A7E037C005E8128 /* TamagotchiInfo.swift */; };
 		C0069AF32A7E079D005E8128 /* PopupSelectTamagotchiVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0069AF22A7E079D005E8128 /* PopupSelectTamagotchiVC.swift */; };
 		C0069AF52A7E0BE6005E8128 /* Extension+ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0069AF42A7E0BE6005E8128 /* Extension+ViewController.swift */; };
-		C0069AF72A7E34BD005E8128 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0069AF62A7E34BD005E8128 /* UserDefaults.swift */; };
 		C0069AF92A7E3508005E8128 /* Extension+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0069AF82A7E3508005E8128 /* Extension+View.swift */; };
+		C0069AFB2A7E372A005E8128 /* Extension+UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0069AFA2A7E372A005E8128 /* Extension+UserDefaults.swift */; };
+		C0069AFD2A7E3911005E8128 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0069AFC2A7E3911005E8128 /* UserInfo.swift */; };
+		C0069AFF2A7E39BD005E8128 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0069AFE2A7E39BD005E8128 /* MainVC.swift */; };
 		C00F2DEE2A7CBAAC004729B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00F2DED2A7CBAAC004729B9 /* AppDelegate.swift */; };
 		C00F2DF02A7CBAAC004729B9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00F2DEF2A7CBAAC004729B9 /* SceneDelegate.swift */; };
 		C00F2DF22A7CBAAC004729B9 /* SelectTamagotchiVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00F2DF12A7CBAAC004729B9 /* SelectTamagotchiVC.swift */; };
@@ -35,8 +37,10 @@
 		C0069AEE2A7E037C005E8128 /* TamagotchiInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TamagotchiInfo.swift; sourceTree = "<group>"; };
 		C0069AF22A7E079D005E8128 /* PopupSelectTamagotchiVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupSelectTamagotchiVC.swift; sourceTree = "<group>"; };
 		C0069AF42A7E0BE6005E8128 /* Extension+ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+ViewController.swift"; sourceTree = "<group>"; };
-		C0069AF62A7E34BD005E8128 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		C0069AF82A7E3508005E8128 /* Extension+View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+View.swift"; sourceTree = "<group>"; };
+		C0069AFA2A7E372A005E8128 /* Extension+UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UserDefaults.swift"; sourceTree = "<group>"; };
+		C0069AFC2A7E3911005E8128 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
+		C0069AFE2A7E39BD005E8128 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainVC.swift; path = Recap/Storyboard/MainVC.swift; sourceTree = SOURCE_ROOT; };
 		C00F2DEA2A7CBAAC004729B9 /* Recap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Recap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C00F2DED2A7CBAAC004729B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C00F2DEF2A7CBAAC004729B9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -73,6 +77,7 @@
 			children = (
 				C0069AE72A7CDD88005E8128 /* Tamagotchi.swift */,
 				C0069AEE2A7E037C005E8128 /* TamagotchiInfo.swift */,
+				C0069AFC2A7E3911005E8128 /* UserInfo.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -83,6 +88,7 @@
 				C0069AEA2A7CF039005E8128 /* Extension+UIColor.swift */,
 				C0069AF42A7E0BE6005E8128 /* Extension+ViewController.swift */,
 				C0069AF82A7E3508005E8128 /* Extension+View.swift */,
+				C0069AFA2A7E372A005E8128 /* Extension+UserDefaults.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -117,7 +123,6 @@
 				C00F2DF62A7CBAAD004729B9 /* Assets.xcassets */,
 				C00F2DF82A7CBAAD004729B9 /* LaunchScreen.storyboard */,
 				C00F2DFB2A7CBAAD004729B9 /* Info.plist */,
-				C0069AF62A7E34BD005E8128 /* UserDefaults.swift */,
 			);
 			path = Recap;
 			sourceTree = "<group>";
@@ -125,6 +130,7 @@
 		C00F2E012A7CD084004729B9 /* VC */ = {
 			isa = PBXGroup;
 			children = (
+				C0069AFE2A7E39BD005E8128 /* MainVC.swift */,
 				C00F2DF12A7CBAAC004729B9 /* SelectTamagotchiVC.swift */,
 				C0069AF22A7E079D005E8128 /* PopupSelectTamagotchiVC.swift */,
 			);
@@ -221,14 +227,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				C0069AE52A7CD8DD005E8128 /* Protocol+CollectionViewCell.swift in Sources */,
+				C0069AFF2A7E39BD005E8128 /* MainVC.swift in Sources */,
 				C0069AEB2A7CF039005E8128 /* Extension+UIColor.swift in Sources */,
 				C00F2E052A7CD47D004729B9 /* Protocol+UIViewController.swift in Sources */,
 				C00F2DF22A7CBAAC004729B9 /* SelectTamagotchiVC.swift in Sources */,
 				C0069AF52A7E0BE6005E8128 /* Extension+ViewController.swift in Sources */,
 				C0069AE82A7CDD88005E8128 /* Tamagotchi.swift in Sources */,
+				C0069AFD2A7E3911005E8128 /* UserInfo.swift in Sources */,
+				C0069AFB2A7E372A005E8128 /* Extension+UserDefaults.swift in Sources */,
 				C00F2DEE2A7CBAAC004729B9 /* AppDelegate.swift in Sources */,
 				C0069AF32A7E079D005E8128 /* PopupSelectTamagotchiVC.swift in Sources */,
-				C0069AF72A7E34BD005E8128 /* UserDefaults.swift in Sources */,
 				C0069AE22A7CD720005E8128 /* StartCollectionViewCell.swift in Sources */,
 				C0069AEF2A7E037C005E8128 /* TamagotchiInfo.swift in Sources */,
 				C0069AF92A7E3508005E8128 /* Extension+View.swift in Sources */,

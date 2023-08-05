@@ -75,20 +75,21 @@
             </objects>
             <point key="canvasLocation" x="1226.0869565217392" y="-29.347826086956523"/>
         </scene>
-        <!--View Controller-->
+        <!--MainVC-->
         <scene sceneID="Myh-0t-elg">
             <objects>
-                <viewController id="0XI-i2-5F7" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainVC" id="0XI-i2-5F7" customClass="MainVC" customModule="Recap" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gER-3U-Gwq">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="dQ8-Tf-8Kn"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemBrownColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="za6-vG-j8m"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RsL-IW-rqH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1229" y="666"/>
+            <point key="canvasLocation" x="1226" y="715"/>
         </scene>
         <!--Popup Select TamagotchiVC-->
         <scene sceneID="2lC-Oo-eMQ">
@@ -230,10 +231,31 @@
             </objects>
             <point key="canvasLocation" x="1991" y="-26"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="3so-9g-vcr">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Gom-z1-hXR" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dFU-h5-vts">
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="0XI-i2-5F7" kind="relationship" relationship="rootViewController" id="mMr-TI-grH"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="STl-zj-rKd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="320" y="715"/>
+        </scene>
     </scenes>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBrownColor">
+            <color red="0.63529411764705879" green="0.51764705882352946" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray4Color">
             <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
