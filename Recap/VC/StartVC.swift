@@ -22,7 +22,7 @@ class StartVC: UIViewController, BaseViewControllerProtocol {
         configVC()
         
         for _ in 0..<20 {
-            list.append(Tamagotchi(type: .twinkle, name: .tingling, description: .twinkle, level: .lv8, rice: 1, water: 1))
+            list.append(Tamagotchi(type: .twinkle, name: .ready, description: .twinkle, level: .lv8, rice: 1, water: 1))
         }
     }
     
@@ -31,6 +31,7 @@ class StartVC: UIViewController, BaseViewControllerProtocol {
     }
 
     func designVC() {
+        view.backgroundColor = MainColor.background.value
         setCollectionViewLayout()
     }
     
@@ -52,7 +53,7 @@ class StartVC: UIViewController, BaseViewControllerProtocol {
         layout.itemSize = CGSize(width: width / count, height: (width / count) * 1.2)
         layout.sectionInset = UIEdgeInsets(top: 20, left: spacing, bottom: 20, right: spacing)  // 컨텐츠가 잘리지 않고 자연스럽게 표시되도록 여백설정
         layout.minimumLineSpacing = 20         // 셀과셀 위 아래 최소 간격
-        layout.minimumInteritemSpacing = spacing    // 셀과셀 좌 우 최소 간격
+        layout.minimumInteritemSpacing = 0    // 셀과셀 좌 우 최소 간격
         collectionView.collectionViewLayout = layout  // layout 교체
     }
 }

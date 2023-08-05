@@ -22,27 +22,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="306" height="307"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NTg-03-A0Z">
-                                <rect key="frame" x="0.0" y="0.0" width="306" height="266"/>
+                                <rect key="frame" x="0.0" y="0.0" width="306" height="284"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pkP-bk-yhO">
-                                <rect key="frame" x="134" y="272" width="38" height="35"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="35" id="f37-Cp-1pH"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="Button"/>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="SsD-iU-ZTF">
+                                <rect key="frame" x="128.66666666666666" y="290" width="48.666666666666657" height="17"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="반짝반짝" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qpb-Aa-9Ns">
+                                        <rect key="frame" x="0.0" y="0.0" width="48.666666666666664" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="다마고치" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hqh-gj-kpm">
+                                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="pkP-bk-yhO" firstAttribute="top" secondItem="NTg-03-A0Z" secondAttribute="bottom" constant="6" id="0fH-fp-X97"/>
                             <constraint firstItem="NTg-03-A0Z" firstAttribute="top" secondItem="afE-8e-Wrp" secondAttribute="top" id="5rM-1n-oxg"/>
-                            <constraint firstItem="pkP-bk-yhO" firstAttribute="centerX" secondItem="afE-8e-Wrp" secondAttribute="centerX" id="5vD-BW-QZA"/>
-                            <constraint firstAttribute="bottom" secondItem="pkP-bk-yhO" secondAttribute="bottom" id="W8o-8l-QWR"/>
+                            <constraint firstItem="SsD-iU-ZTF" firstAttribute="top" secondItem="NTg-03-A0Z" secondAttribute="bottom" constant="6" id="OHI-gX-hMF"/>
                             <constraint firstItem="NTg-03-A0Z" firstAttribute="leading" secondItem="afE-8e-Wrp" secondAttribute="leading" id="b61-mx-y0G"/>
                             <constraint firstAttribute="trailing" secondItem="NTg-03-A0Z" secondAttribute="trailing" id="myE-k0-w3g"/>
-                            <constraint firstItem="pkP-bk-yhO" firstAttribute="centerX" secondItem="afE-8e-Wrp" secondAttribute="centerX" id="yOV-tC-P7s"/>
+                            <constraint firstAttribute="bottom" secondItem="SsD-iU-ZTF" secondAttribute="bottom" id="qxU-bT-yvs"/>
+                            <constraint firstItem="SsD-iU-ZTF" firstAttribute="centerX" secondItem="afE-8e-Wrp" secondAttribute="centerX" id="xZr-19-deX"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -56,8 +63,10 @@
             </constraints>
             <size key="customSize" width="306" height="307"/>
             <connections>
-                <outlet property="nameButton" destination="pkP-bk-yhO" id="MpL-nu-yYP"/>
+                <outlet property="baseLabel" destination="hqh-gj-kpm" id="pRb-Em-aGI"/>
+                <outlet property="nameStackView" destination="SsD-iU-ZTF" id="Ozw-Q7-rF1"/>
                 <outlet property="thumbImageView" destination="NTg-03-A0Z" id="kzn-iR-G0v"/>
+                <outlet property="typeLabel" destination="qpb-Aa-9Ns" id="jLX-gI-IzW"/>
             </connections>
             <point key="canvasLocation" x="326.71755725190837" y="79.225352112676063"/>
         </collectionViewCell>
