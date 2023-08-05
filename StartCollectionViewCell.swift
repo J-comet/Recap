@@ -13,7 +13,6 @@ class StartCollectionViewCell: UICollectionViewCell, BaseCollectionViewCellProto
     static var identifier = "StartCollectionViewCell"
     
     @IBOutlet var thumbImageView: UIImageView!
-    
     @IBOutlet var nameStackView: UIStackView!
     @IBOutlet var typeLabel: UILabel!
     @IBOutlet var baseLabel: UILabel!
@@ -40,12 +39,8 @@ class StartCollectionViewCell: UICollectionViewCell, BaseCollectionViewCellProto
     }
     
     func configureCell(row: Tamagotchi) {
-        if row.name == TamagotchiName.ready {
-            baseLabel.isHidden = true
-        } else {
-            baseLabel.isHidden = false
-        }
+        baseLabel.isHidden = row.name == TamagotchiName.ready ? true : false
         typeLabel.text = row.name.rawValue
-        thumbImageView.image = UIImage(named: row.imgName)
+        thumbImageView.image = row.type == .ready ? UIImage(named: "noImage") : UIImage(named: row.imgName)
     }
 }

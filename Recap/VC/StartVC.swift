@@ -13,17 +13,13 @@ class StartVC: UIViewController, BaseViewControllerProtocol {
     
     @IBOutlet var collectionView: UICollectionView!
     
-    var list: [Tamagotchi] = []
+    let tamagochiInfo = TamagotchiInfo()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configNavigationBar()
         designVC()
         configVC()
-        
-        for _ in 0..<20 {
-            list.append(Tamagotchi(type: .twinkle, name: .ready, description: .twinkle, level: .lv8, rice: 1, water: 1))
-        }
     }
     
     func configNavigationBar() {
@@ -60,7 +56,7 @@ class StartVC: UIViewController, BaseViewControllerProtocol {
 
 extension StartVC: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        list.count
+        return tamagochiInfo.getList().count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -69,8 +65,12 @@ extension StartVC: UICollectionViewDelegate, UICollectionViewDataSource {
             return UICollectionViewCell()
         }
         
-        cell.configureCell(row: list[indexPath.row])
+        cell.configureCell(row: tamagochiInfo.getList()[indexPath.row])
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print(indexPath.row)
     }
     
 }
