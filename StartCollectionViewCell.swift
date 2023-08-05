@@ -23,20 +23,10 @@ class StartCollectionViewCell: UICollectionViewCell, BaseCollectionViewCellProto
     }
     
     func designCell() {
-        nameStackView.layer.borderColor = MainColor.fontOrStroke.value.cgColor
-        nameStackView.layer.cornerRadius = 6
-        nameStackView.layer.borderWidth = 1
-        nameStackView.clipsToBounds = true
-        nameStackView.layoutMargins = UIEdgeInsets(top: 8, left: 10, bottom: 8, right: 10)
-        nameStackView.isLayoutMarginsRelativeArrangement = true
-
-        typeLabel.font = .boldSystemFont(ofSize: 12)
-        typeLabel.textColor = MainColor.fontOrStroke.value
-        baseLabel.font = .boldSystemFont(ofSize: 12)
-        baseLabel.textColor = MainColor.fontOrStroke.value
-        
+        nameStackView.designTamagotchiNameBorderLine()
+        typeLabel.designTamagotchiName()
+        baseLabel.designTamagotchiName()
         baseLabel.text = "다마고치"
-        
         thumbImageView.contentMode = .scaleAspectFit
     }
     
