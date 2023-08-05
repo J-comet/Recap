@@ -21,6 +21,7 @@ class MainVC: UIViewController, BaseViewControllerProtocol {
     
     @IBOutlet var bottomDoneView: UIView!
     @IBOutlet var bottomDoneLabel: UILabel!
+    @IBOutlet var bottomDoneButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,9 +46,20 @@ class MainVC: UIViewController, BaseViewControllerProtocol {
         print(#function)
     }
     
+    @IBAction func bottomDoneClicked(_ sender: UIButton) {
+        statusBottonDoneView(isHidden: true)
+    }
+    
     func designVC() {
         setBackgroundColor()
         navBarUnderLine.backgroundColor = .systemGray5
+        bottomDoneLabel.text = FeedType.rice.rawValue
+        bottomDoneLabel.font = .systemFont(ofSize: 12)
+        bottomDoneLabel.textColor = .systemGray3
+        
+        bottomDoneButton.setTitle("Done", for: .normal)
+        bottomDoneButton.tintColor = .link
+        bottomDoneButton.titleLabel?.font = .boldSystemFont(ofSize: 14)
     }
     
     func configVC() {
@@ -55,6 +67,8 @@ class MainVC: UIViewController, BaseViewControllerProtocol {
     }
     
     private func statusBottonDoneView(isHidden: Bool) {
+        // 하단영역 디자인 마무리 하기
+        
         print("origin = ", self.bottomDoneView.frame.origin.y)
         print("height = ", self.bottomDoneView.frame.height)
         let height = self.bottomDoneView.frame.height

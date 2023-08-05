@@ -100,6 +100,14 @@
                                             <constraint firstAttribute="height" constant="1" id="fWv-c1-eY9"/>
                                         </constraints>
                                     </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eIn-Ff-iPL">
+                                        <rect key="frame" x="309" y="15" width="46" height="30"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="bottomDoneClicked:" destination="0XI-i2-5F7" eventType="touchUpInside" id="zQN-56-Vt7"/>
+                                        </connections>
+                                    </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Hp-Gk-o6h">
                                         <rect key="frame" x="166.66666666666666" y="19.666666666666629" width="42" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -110,7 +118,9 @@
                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
                                 <constraints>
                                     <constraint firstItem="1Hp-Gk-o6h" firstAttribute="centerX" secondItem="w0D-Qe-KhH" secondAttribute="centerX" id="0I4-h6-zGS"/>
+                                    <constraint firstAttribute="trailing" secondItem="eIn-Ff-iPL" secondAttribute="trailing" constant="20" id="1ye-Us-f8o"/>
                                     <constraint firstItem="9Of-2g-Ydp" firstAttribute="leading" secondItem="w0D-Qe-KhH" secondAttribute="leading" id="6Cd-FK-vjA"/>
+                                    <constraint firstItem="eIn-Ff-iPL" firstAttribute="centerY" secondItem="w0D-Qe-KhH" secondAttribute="centerY" id="7Zb-TG-Ca8"/>
                                     <constraint firstAttribute="height" constant="60" id="K9l-fu-fuP"/>
                                     <constraint firstItem="1Hp-Gk-o6h" firstAttribute="centerY" secondItem="w0D-Qe-KhH" secondAttribute="centerY" id="PZV-Ub-6MC"/>
                                     <constraint firstItem="9Of-2g-Ydp" firstAttribute="top" secondItem="w0D-Qe-KhH" secondAttribute="top" id="hVx-iP-9JY"/>
@@ -131,6 +141,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="za6-vG-j8m"/>
                     <connections>
+                        <outlet property="bottomDoneButton" destination="eIn-Ff-iPL" id="7gb-f4-IyE"/>
                         <outlet property="bottomDoneLabel" destination="1Hp-Gk-o6h" id="Yr8-Y7-w7U"/>
                         <outlet property="bottomDoneView" destination="w0D-Qe-KhH" id="2oR-Tz-PJE"/>
                         <outlet property="navBarUnderLine" destination="0Ha-2L-IWz" id="jWP-lG-mFs"/>
