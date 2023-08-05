@@ -22,7 +22,7 @@ class PopupSelectTamagotchiVC: UIViewController, BaseViewControllerProtocol {
     @IBOutlet var cancelLabel: UILabel!
     @IBOutlet var startLabel: UILabel!
     
-    var tamagotchi: Tamagotchi?
+    var selectedTamagotchi: Tamagotchi?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,13 +38,29 @@ class PopupSelectTamagotchiVC: UIViewController, BaseViewControllerProtocol {
     }
     
     @IBAction func startClicked(_ sender: UITapGestureRecognizer) {
-        print("시작")
+        let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
+        let sceneDelegate = windowScene?.delegate as? SceneDelegate
+        
+        let sb = UIStoryboard(name: StoryBoardId.Main.rawValue, bundle: nil)
+        guard let vc = sb.instantiateViewController(withIdentifier: MainVC.identifier) as? MainVC else {
+            return
+        }
+        
+        selectedTamagotchi?.level = .lv1
+        
+        UserDefaults.userInfo = UserInfo(tamagotchi: selectedTamagotchi)
+        
+        sceneDelegate?.window?.rootViewController = UINavigationController(rootViewController: vc)
+        sceneDelegate?.window?.makeKeyAndVisible()
+        
+        // 데이터 저장 완료 메인 화면 개발 시작
     }
     
     
     func designVC() {
         containerView.layer.cornerRadius = 8
         containerView.clipsToBounds = true
+        containerView.backgroundColor = MainColor.background.value
         
         thumbImageView.contentMode = .scaleAspectFill
         
@@ -69,10 +85,10 @@ class PopupSelectTamagotchiVC: UIViewController, BaseViewControllerProtocol {
     }
     
     func configVC() {
-        if let tamagotchi {
-            typeLabel.text = tamagotchi.name.rawValue
-            thumbImageView.image = UIImage(named: tamagotchi.imgName)
-            contentLabel.text = tamagotchi.description.rawValue
+        if let selectedTamagotchi {
+            typeLabel.text = selectedTamagotchi.name.rawValue
+            thumbImageView.image = UIImage(named: selectedTamagotchi.imgName)
+            contentLabel.text = selectedTamagotchi.description.rawValue
         }
     }
     

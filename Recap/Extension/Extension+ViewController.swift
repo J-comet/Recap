@@ -21,4 +21,8 @@ extension UIViewController {
         
         present(alert, animated: true)
     }
+    
+    func setBackgroundColor() {
+        self.view.backgroundColor = MainColor.background.value
+    }
 }

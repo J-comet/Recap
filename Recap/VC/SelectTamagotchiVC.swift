@@ -27,7 +27,7 @@ class SelectTamagotchiVC: UIViewController, BaseViewControllerProtocol {
     }
 
     func designVC() {
-        view.backgroundColor = MainColor.background.value
+        setBackgroundColor()
         setCollectionViewLayout()
     }
     
@@ -70,10 +70,10 @@ extension SelectTamagotchiVC: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let sb = UIStoryboard(name: StoryBoardId.Main.rawValue, bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: PopupSelectTamagotchiVC.identifier) as! PopupSelectTamagotchiVC
         
-        vc.tamagotchi = tamagochiInfo.getList()[indexPath.row]
+        vc.selectedTamagotchi = tamagochiInfo.getList()[indexPath.row]
         
         let nav = UINavigationController(rootViewController: vc)
         nav.modalPresentationStyle = .overFullScreen

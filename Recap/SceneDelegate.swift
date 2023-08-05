@@ -24,7 +24,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         print("첫실행 =",isLaunched)
         print("유저정보 =",UserDefaults.userInfo)
         
-        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let sb = UIStoryboard(name: StoryBoardId.Main.rawValue, bundle: nil)
         
         if isLaunched {
             UserDefaults.isLaunched = false
