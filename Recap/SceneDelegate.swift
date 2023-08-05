@@ -18,32 +18,29 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let scene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: scene)
         
-        UserDefaults.userInfo = UserInfo(name: "저장되냐")
-        
         // 1. 처음 앱 실행한 유저인지 확인
         // 2. 다마고치를 생성했는 유저인지 확인
         let isLaunched = UserDefaults.isLaunched
-        print("첫실행 = ",isLaunched)
-        print(UserDefaults.userInfo)
+        print("첫실행 =",isLaunched)
+        print("유저정보 =",UserDefaults.userInfo)
         
         let sb = UIStoryboard(name: "Main", bundle: nil)
         
         if isLaunched {
+            UserDefaults.isLaunched = false
             guard let vc = sb.instantiateViewController(withIdentifier: SelectTamagotchiVC.identifier) as? SelectTamagotchiVC else {
                 return
             }
-            UserDefaults.isLaunched = false
-                    
             window?.rootViewController = UINavigationController(rootViewController: vc)
+            window?.makeKeyAndVisible()
         } else {
-            // 다마고치 생성한 유저인지 확인
+            let vc = UserDefaults.userInfo.tamagotchi == nil ? sb.instantiateViewController(withIdentifier: SelectTamagotchiVC.identifier) as? SelectTamagotchiVC : sb.instantiateViewController(withIdentifier: MainVC.identifier) as? MainVC
             
-            guard let vc = sb.instantiateViewController(withIdentifier: MainVC.identifier) as? MainVC else {
-                return
+            if let vc {
+                window?.rootViewController = UINavigationController(rootViewController: vc)
+                window?.makeKeyAndVisible()
             }
-            window?.rootViewController = UINavigationController(rootViewController: vc)
         }
-        window?.makeKeyAndVisible()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
