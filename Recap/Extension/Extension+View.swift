@@ -24,3 +24,13 @@ extension UIStackView {
         self.isLayoutMarginsRelativeArrangement = true
     }
 }
+
+extension UITextField {
+    func customUnderLine(color: UIColor) {
+        let border = CALayer()
+        border.frame = CGRect(x: 0, y: self.frame.size.height, width:  self.frame.size.width - 10, height: 1)
+        border.backgroundColor = color.cgColor
+        self.layer.addSublayer(border)
+        self.layer.masksToBounds = true
+    }
+}
