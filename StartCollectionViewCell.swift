@@ -35,6 +35,8 @@ class StartCollectionViewCell: UICollectionViewCell, BaseCollectionViewCellProto
         baseLabel.font = .boldSystemFont(ofSize: 12)
         baseLabel.textColor = MainColor.fontOrStroke.value
         
+        baseLabel.text = "다마고치"
+        
         thumbImageView.contentMode = .scaleAspectFit
     }
     

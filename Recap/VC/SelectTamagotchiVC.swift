@@ -7,7 +7,7 @@
 
 import UIKit
 
-class StartVC: UIViewController, BaseViewControllerProtocol {
+class SelectTamagotchiVC: UIViewController, BaseViewControllerProtocol {
     
     static var identifier = "StartVC"
     
@@ -54,7 +54,7 @@ class StartVC: UIViewController, BaseViewControllerProtocol {
     }
 }
 
-extension StartVC: UICollectionViewDelegate, UICollectionViewDataSource {
+extension SelectTamagotchiVC: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return tamagochiInfo.getList().count
     }
@@ -70,7 +70,19 @@ extension StartVC: UICollectionViewDelegate, UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(indexPath.row)
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: PopupSelectTamagotchiVC.identifier) as! PopupSelectTamagotchiVC
+        
+        vc.tamagotchi = tamagochiInfo.getList()[indexPath.row]
+        
+        let nav = UINavigationController(rootViewController: vc)
+        nav.modalPresentationStyle = .overFullScreen
+        
+        if tamagochiInfo.getList()[indexPath.row].type == .ready {
+            showAlert(title: TamagotchiName.ready.rawValue, msg: "", ok: "확인")
+        } else {
+            present(nav, animated: true)
+        }
     }
     
 }
