@@ -35,14 +35,9 @@ class SettingVC: UIViewController, BaseViewControllerProtocol {
     
     func configNavigationBar() {
         title = "설정"
-        navigationItem.leftBarButtonItem = UIBarButtonItem(
-            image: UIImage(systemName: "chevron.backward"),
-            style: .plain,
-            target: self,
-            action: #selector(backButtonClicked)
-        )
-        navigationItem.leftBarButtonItem?.tintColor = MainColor.setting.value
-                
+        
+        self.navigationController?.navigationBar.tintColor = MainColor.setting.value
+  
         let appearance = UINavigationBarAppearance()
         appearance.configureWithOpaqueBackground()
         let titleAttribute = [
@@ -52,10 +47,6 @@ class SettingVC: UIViewController, BaseViewControllerProtocol {
         appearance.titleTextAttributes = titleAttribute
         navigationController?.navigationBar.standardAppearance = appearance
         navigationController?.navigationBar.scrollEdgeAppearance = appearance
-    }
-    
-    @objc func backButtonClicked(_ sender: UIBarButtonItem) {
-        navigationController?.popViewController(animated: true)
     }
 }
 
@@ -73,7 +64,18 @@ extension SettingVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(#function)
+        let row = SettingInfo.list[indexPath.row]
+        
+        switch row.type {
+        case .name:
+            let sb = UIStoryboard(name: StoryBoardId.Main.rawValue, bundle: nil)
+            let vc = sb.instantiateViewController(withIdentifier: ChangeNameVC.identifier) as! ChangeNameVC
+            navigationController?.pushViewController(vc, animated: true)
+        case .tamagotchi:
+            print("tamagotchi")
+        case .reset:
+            print("reset")
+        }
         tableView.reloadRows(at: [indexPath], with: .fade)
     }
     

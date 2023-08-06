@@ -35,7 +35,7 @@ class MainVC: UIViewController, BaseViewControllerProtocol {
     
     @IBOutlet var waterButton: UIButton!
     @IBOutlet var waterTextField: UITextField!
-
+    
     let randomStoryList = TamagotchiRandomStory().list
     
     var selectedTamagotchi: Tamagotchi?
@@ -52,15 +52,20 @@ class MainVC: UIViewController, BaseViewControllerProtocol {
         configVC()
     }
     
+    override func awakeAfter(using coder: NSCoder) -> Any? {
+        navigationItem.backButtonDisplayMode = .minimal
+        return super.awakeAfter(using: coder)
+    }
+    
     @objc func settingButtonClicked(_ sender: UIBarButtonItem) {
         let sb = UIStoryboard(name: StoryBoardId.Main.rawValue, bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: SettingVC.identifier) as! SettingVC
         navigationController?.pushViewController(vc, animated: true)
     }
     
-//    @IBAction func bottomDoneClicked(_ sender: UIButton) {
-//        statusBottonDoneView(isHidden: true)
-//    }
+    //    @IBAction func bottomDoneClicked(_ sender: UIButton) {
+    //        statusBottonDoneView(isHidden: true)
+    //    }
     
     @IBAction func viewTabGestureTabbed(_ sender: UITapGestureRecognizer) {
         view.endEditing(true)
@@ -122,7 +127,7 @@ class MainVC: UIViewController, BaseViewControllerProtocol {
             action: #selector(settingButtonClicked)
         )
         navigationItem.rightBarButtonItem?.tintColor = MainColor.fontOrStroke.value
-
+        
         let appearance = UINavigationBarAppearance()
         appearance.configureWithOpaqueBackground()
         appearance.backgroundColor = .white
@@ -134,7 +139,7 @@ class MainVC: UIViewController, BaseViewControllerProtocol {
     func designVC() {
         setBackgroundColor()
         
-//        designBottomDoneView()
+        //        designBottomDoneView()
         designMainContentView()
         designButton(outlet: riceButton, title: "밥먹기", imgName: "drop.circle")
         designButton(outlet: waterButton, title: "물먹기", imgName: "leaf.circle")
@@ -158,7 +163,7 @@ class MainVC: UIViewController, BaseViewControllerProtocol {
     private func currentTamagotchi(selectedTama: Tamagotchi?) -> Tamagotchi? {
         guard let selectedTama else {
             print("전달 받은 데이터 없음!!")
-             return UserDefaults.userInfo.tamagotchi
+            return UserDefaults.userInfo.tamagotchi
         }
         return selectedTama
     }
@@ -166,24 +171,24 @@ class MainVC: UIViewController, BaseViewControllerProtocol {
     /**
      * IQKeyboardManager 적용 후 애니매이션 및 디자인 주석처리
      */
-//    private func statusBottonDoneView(isHidden: Bool) {
-//        print("origin = ", self.bottomDoneView.frame.origin.y)
-//        print("height = ", self.bottomDoneView.frame.height)
-//        let height = self.bottomDoneView.frame.height
-//        let translationY: CGFloat = isHidden == true ? height : -height
-//        UIView.animate(withDuration: 0.7, delay: 0 , options: .curveEaseInOut, animations: {
-//            self.bottomDoneView.transform = CGAffineTransform(translationX: 0, y:  translationY)
-//        }, completion: nil)
-//    }
-//    private func designBottomDoneView() {
-//        bottomDoneLabel.text = FeedType.rice.rawValue
-//        bottomDoneLabel.font = .systemFont(ofSize: 12)
-//        bottomDoneLabel.textColor = .systemGray3
-//
-//        bottomDoneButton.setTitle("Done", for: .normal)
-//        bottomDoneButton.tintColor = .link
-//        bottomDoneButton.titleLabel?.font = .boldSystemFont(ofSize: 14)
-//    }
+    //    private func statusBottonDoneView(isHidden: Bool) {
+    //        print("origin = ", self.bottomDoneView.frame.origin.y)
+    //        print("height = ", self.bottomDoneView.frame.height)
+    //        let height = self.bottomDoneView.frame.height
+    //        let translationY: CGFloat = isHidden == true ? height : -height
+    //        UIView.animate(withDuration: 0.7, delay: 0 , options: .curveEaseInOut, animations: {
+    //            self.bottomDoneView.transform = CGAffineTransform(translationX: 0, y:  translationY)
+    //        }, completion: nil)
+    //    }
+    //    private func designBottomDoneView() {
+    //        bottomDoneLabel.text = FeedType.rice.rawValue
+    //        bottomDoneLabel.font = .systemFont(ofSize: 12)
+    //        bottomDoneLabel.textColor = .systemGray3
+    //
+    //        bottomDoneButton.setTitle("Done", for: .normal)
+    //        bottomDoneButton.tintColor = .link
+    //        bottomDoneButton.titleLabel?.font = .boldSystemFont(ofSize: 14)
+    //    }
     
     private func designMainContentView() {
         bubbleImageView.image = UIImage(named: "bubble")
