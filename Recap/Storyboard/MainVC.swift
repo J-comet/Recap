@@ -7,9 +7,47 @@
 
 import UIKit
 
-enum FeedType: String {
-    case rice = "밥주세용"
-    case water = "물주세용"
+enum FeedType {
+    case rice
+    case water
+}
+
+extension FeedType {
+    var buttonTitle: String {
+        switch self {
+        case .rice:
+            return "밥먹기"
+        case .water:
+            return "물먹기"
+        }
+    }
+    
+    var placeText: String {
+        switch self {
+        case .rice:
+            return "밥주세용"
+        case .water:
+            return "물주세용"
+        }
+    }
+    
+    var img: String {
+        switch self {
+        case .rice:
+            return "drop.circle"
+        case .water:
+            return "leaf.circle"
+        }
+    }
+    
+    var errorMsg: String {
+        switch self {
+        case .rice:
+            return "밥은 99개까지 먹일 수 있어요"
+        case .water:
+            return "물은 49개까지 먹일 수 있어요"
+        }
+    }
 }
 
 class MainVC: UIViewController, BaseViewControllerProtocol {
@@ -46,15 +84,10 @@ class MainVC: UIViewController, BaseViewControllerProtocol {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        randomContentLabel.text = TamagotchiRandomStory().list.randomElement()!
+        updateRandomStory()
         
         title = "\(UserDefaults.userInfo.name)님의 다마고치"
         configVC()
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-//        print("33333")
     }
     
     override func awakeAfter(using coder: NSCoder) -> Any? {
@@ -81,7 +114,7 @@ class MainVC: UIViewController, BaseViewControllerProtocol {
             if riceTextField.text?.count ?? 0 > 0 {
                 let input = Int(riceTextField.text!) ?? 0
                 if input > 99 {
-                    showAlert(title: "경고", msg: "밥은 99개까지 먹일 수 있어요.", ok: "확인")
+                    showAlert(title: "경고", msg: FeedType.rice.errorMsg, ok: "확인")
                     riceTextField.text = nil
                     return
                 } else {
@@ -94,6 +127,7 @@ class MainVC: UIViewController, BaseViewControllerProtocol {
                 tamagotchiInfoLabel.text = selectedTamagotchi?.info
             }
             
+            updateRandomStory()
             UserDefaults.userInfo.tamagotchi = selectedTamagotchi
             tamagotchiImageView.image = UIImage(named: selectedTamagotchi!.imgName)
         }
@@ -104,7 +138,7 @@ class MainVC: UIViewController, BaseViewControllerProtocol {
             if waterTextField.text?.count ?? 0 > 0 {
                 let input = Int(waterTextField.text!) ?? 0
                 if input > 49 {
-                    showAlert(title: "경고", msg: "물은 49개까지 먹일 수 있어요.", ok: "확인")
+                    showAlert(title: "경고", msg: FeedType.water.errorMsg, ok: "확인")
                     waterTextField.text = nil
                     return
                 } else {
@@ -117,6 +151,7 @@ class MainVC: UIViewController, BaseViewControllerProtocol {
                 tamagotchiInfoLabel.text = selectedTamagotchi?.info
             }
             
+            updateRandomStory()
             UserDefaults.userInfo.tamagotchi = selectedTamagotchi
             tamagotchiImageView.image = UIImage(named: selectedTamagotchi!.imgName)
         }
@@ -140,15 +175,19 @@ class MainVC: UIViewController, BaseViewControllerProtocol {
         navigationController?.navigationBar.scrollEdgeAppearance = appearance
     }
     
+    private func updateRandomStory() {
+        randomContentLabel.text = TamagotchiRandomStory().list.randomElement()!
+    }
+    
     func designVC() {
         setBackgroundColor()
         
         //        designBottomDoneView()
         designMainContentView()
-        designButton(outlet: riceButton, title: "밥먹기", imgName: "drop.circle")
-        designButton(outlet: waterButton, title: "물먹기", imgName: "leaf.circle")
-        designTextField(outlet: riceTextField, placeHolder: FeedType.rice.rawValue)
-        designTextField(outlet: waterTextField, placeHolder: FeedType.water.rawValue)
+        designButton(outlet: riceButton, type: FeedType.rice)
+        designButton(outlet: waterButton, type: FeedType.water)
+        designTextField(outlet: riceTextField, placeHolder: FeedType.rice.placeText)
+        designTextField(outlet: waterTextField, placeHolder: FeedType.water.placeText)
     }
     
     func configVC() {
@@ -213,18 +252,18 @@ class MainVC: UIViewController, BaseViewControllerProtocol {
         tamagotchiInfoLabel.textAlignment = .center
     }
     
-    private func designButton(outlet button: UIButton, title: String, imgName: String) {
+    private func designButton(outlet button: UIButton, type: FeedType) {
         button.layer.cornerRadius = 8
         button.layer.borderWidth = 1
         button.layer.borderColor = MainColor.fontOrStroke.value.cgColor
         
-        var attString = AttributedString(title)
+        var attString = AttributedString(type.buttonTitle)
         attString.font = .systemFont(ofSize: 14, weight: .medium)
         attString.foregroundColor = MainColor.fontOrStroke.value
         var config = UIButton.Configuration.filled()
         config.attributedTitle = attString
         config.contentInsets = .init(top: 8, leading: 8, bottom: 8, trailing: 8)
-        config.image = UIImage(systemName: imgName)
+        config.image = UIImage(systemName: type.img)
         config.imagePadding = 4
         config.imagePlacement = .leading
         config.baseBackgroundColor = MainColor.background.value

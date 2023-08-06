@@ -11,8 +11,6 @@ class ChangeNameVC: UIViewController, BaseViewControllerProtocol {
     
     static var identifier = "ChangeNameVC"
     
-    var userInfo = UserDefaults.userInfo
-    
     @IBOutlet var nameTextField: UITextField!
     
     override func viewDidLoad() {
@@ -37,7 +35,7 @@ class ChangeNameVC: UIViewController, BaseViewControllerProtocol {
     
     func configVC() {
         nameTextField.delegate = self
-        nameTextField.text = userInfo.name
+        nameTextField.text = UserDefaults.userInfo.name
     }
     
     func configNavigationBar() {
