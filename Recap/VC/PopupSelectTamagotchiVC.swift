@@ -46,16 +46,12 @@ class PopupSelectTamagotchiVC: UIViewController, BaseViewControllerProtocol {
             return
         }
         
-        selectedTamagotchi?.level = .lv1
         UserDefaults.userInfo = UserInfo(tamagotchi: selectedTamagotchi)
         vc.selectedTamagotchi = selectedTamagotchi
         
         sceneDelegate?.window?.rootViewController = UINavigationController(rootViewController: vc)
         sceneDelegate?.window?.makeKeyAndVisible()
-        
-        // 데이터 저장 완료 메인 화면 개발 시작
     }
-    
     
     func designVC() {
         containerView.layer.cornerRadius = 8
@@ -87,7 +83,7 @@ class PopupSelectTamagotchiVC: UIViewController, BaseViewControllerProtocol {
     func configVC() {
         if let selectedTamagotchi {
             typeLabel.text = selectedTamagotchi.name.rawValue
-            thumbImageView.image = UIImage(named: selectedTamagotchi.imgName)
+            thumbImageView.image = UIImage(named: selectedTamagotchi.defaultImgName)
             contentLabel.text = selectedTamagotchi.description.rawValue
         }
     }

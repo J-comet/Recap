@@ -8,17 +8,52 @@
 import Foundation
 
 struct Tamagotchi: Codable {
+    
+    var defaultImgName: String {
+        return "\(type.rawValue)-6"
+    }
+    
     var type: TamagotchiType
     var name: TamagotchiName
     var description: TamagotchiDescription
-    var level: TamagotchiLevel
     var rice = 0
     var water = 0
     var imgName: String {
-        return "\(type.rawValue)-\(level.rawValue)"
+        var imgLevel: Int
+        if level == TamagotchiLevel.lv10 {
+            imgLevel = 9
+        } else {
+            imgLevel = level.rawValue
+        }
+        return "\(type.rawValue)-\(imgLevel)"
     }
     var info: String {
         return "LV\(level.rawValue) · 밥알 \(rice)개 · 물방울 \(water)개"
+    }
+    var level: TamagotchiLevel {
+        let sum = CGFloat((rice / 5) + (water / 2))
+        switch sum {
+        case 0..<20:
+            return .lv1
+        case 20..<30:
+            return .lv2
+        case 30..<40:
+            return .lv3
+        case 40..<50:
+            return .lv4
+        case 50..<60:
+            return .lv5
+        case 60..<70:
+            return .lv6
+        case 70..<80:
+            return .lv7
+        case 80..<90:
+            return .lv8
+        case 90..<100:
+            return .lv9
+        default:
+            return .lv10
+        }
     }
 }
 
@@ -53,4 +88,5 @@ enum TamagotchiLevel: Int, Codable {
     case lv7
     case lv8
     case lv9
+    case lv10
 }

@@ -15,13 +15,13 @@ struct TamagotchiInfo {
             var tamagotchi: Tamagotchi
             switch i {
             case 0:
-                tamagotchi = Tamagotchi(type: .tingling, name: .tingling, description: .tingling, level: .lv6)
+                tamagotchi = Tamagotchi(type: .tingling, name: .tingling, description: .tingling)
             case 1:
-                tamagotchi = Tamagotchi(type: .fluttering, name: .fluttering, description: .fluttering, level: .lv6)
+                tamagotchi = Tamagotchi(type: .fluttering, name: .fluttering, description: .fluttering)
             case 2:
-                tamagotchi = Tamagotchi(type: .twinkle, name: .twinkle, description: .twinkle, level: .lv6)
+                tamagotchi = Tamagotchi(type: .twinkle, name: .twinkle, description: .twinkle)
             default:
-                tamagotchi = Tamagotchi(type: .ready, name: .ready, description: .ready, level: .lv1)
+                tamagotchi = Tamagotchi(type: .ready, name: .ready, description: .ready)
             }
             list.append(tamagotchi)
         }
