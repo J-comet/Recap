@@ -36,8 +36,6 @@ class MainVC: UIViewController, BaseViewControllerProtocol {
     @IBOutlet var waterButton: UIButton!
     @IBOutlet var waterTextField: UITextField!
     
-    let randomStoryList = TamagotchiRandomStory().list
-    
     var selectedTamagotchi: Tamagotchi?
     
     override func viewDidLoad() {
@@ -48,8 +46,15 @@ class MainVC: UIViewController, BaseViewControllerProtocol {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        randomContentLabel.text = randomStoryList.randomElement()!
+        randomContentLabel.text = TamagotchiRandomStory().list.randomElement()!
+        
+        title = "\(UserDefaults.userInfo.name)님의 다마고치"
         configVC()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+//        print("33333")
     }
     
     override func awakeAfter(using coder: NSCoder) -> Any? {
@@ -118,7 +123,6 @@ class MainVC: UIViewController, BaseViewControllerProtocol {
     }
     
     func configNavigationBar() {
-        title = "\(UserDefaults.userInfo.name)님의 다마고치"
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(
             image: UIImage(systemName: "person.circle"),

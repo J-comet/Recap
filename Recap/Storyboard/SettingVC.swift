@@ -13,11 +13,22 @@ class SettingVC: UIViewController, BaseViewControllerProtocol {
     
     @IBOutlet var settingTableView: UITableView!
     
+    var list: [Setting] = [] {
+        didSet {
+            settingTableView.reloadData()
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         designVC()
         configVC()
         configNavigationBar()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        list = SettingInfo().list
     }
 
     func designVC() {
@@ -52,19 +63,19 @@ class SettingVC: UIViewController, BaseViewControllerProtocol {
 
 extension SettingVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return SettingInfo.list.count
+        return list.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: SettingTableViewCell.identifier, for: indexPath) as? SettingTableViewCell else {
             return UITableViewCell()
         }
-        cell.configureCell(row: SettingInfo.list[indexPath.row])
+        cell.configureCell(row: list[indexPath.row])
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let row = SettingInfo.list[indexPath.row]
+        let row = list[indexPath.row]
         
         switch row.type {
         case .name:

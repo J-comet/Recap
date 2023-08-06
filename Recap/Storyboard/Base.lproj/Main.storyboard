@@ -292,6 +292,45 @@
             </objects>
             <point key="canvasLocation" x="2121" y="715"/>
         </scene>
+        <!--Change NameVC-->
+        <scene sceneID="J5Z-c5-HZE">
+            <objects>
+                <viewController storyboardIdentifier="ChangeNameVC" id="eUa-A1-aav" customClass="ChangeNameVC" customModule="Recap" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DSY-A2-3QB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hhb-4F-MyM">
+                                <rect key="frame" x="40" y="80" width="295" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="XJ6-Kc-3Zg"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="Hhb-4F-MyM" firstAttribute="leading" secondItem="XJ6-Kc-3Zg" secondAttribute="leading" constant="40" id="lp6-uh-GBw"/>
+                            <constraint firstItem="XJ6-Kc-3Zg" firstAttribute="trailing" secondItem="Hhb-4F-MyM" secondAttribute="trailing" constant="40" id="mcU-tl-LXt"/>
+                            <constraint firstItem="Hhb-4F-MyM" firstAttribute="top" secondItem="XJ6-Kc-3Zg" secondAttribute="top" constant="30" id="xQX-TB-R7Y"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="KdS-Vg-NjJ" appends="YES" id="GrM-qF-XPd"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="nameTextField" destination="Hhb-4F-MyM" id="e0e-Zm-XTc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="u2p-Cy-Hx8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="KdS-Vg-NjJ">
+                    <connections>
+                        <action selector="containerViewTabbed:" destination="eUa-A1-aav" id="nwe-eu-rOH"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="2972" y="721"/>
+        </scene>
         <!--Popup Select TamagotchiVC-->
         <scene sceneID="2lC-Oo-eMQ">
             <objects>
