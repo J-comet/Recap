@@ -21,10 +21,9 @@ class PopupSelectTamagotchiVC: UIViewController, BaseViewControllerProtocol {
     
     @IBOutlet var cancelLabel: UILabel!
     @IBOutlet var startLabel: UILabel!
-    @IBOutlet var changeLabel: UILabel!
     
     var selectedTamagotchi: Tamagotchi?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         designVC()
@@ -32,13 +31,6 @@ class PopupSelectTamagotchiVC: UIViewController, BaseViewControllerProtocol {
         
         cancelLabel.isUserInteractionEnabled = true
         startLabel.isUserInteractionEnabled = true
-        changeLabel.isUserInteractionEnabled = true
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        startLabel.isHidden = UserDefaults.userInfo.tamagotchi == nil ? false : true
-        changeLabel.isHidden = UserDefaults.userInfo.tamagotchi == nil ? true : false
     }
     
     @IBAction func cancelClicked(_ sender: UITapGestureRecognizer) {
@@ -46,31 +38,7 @@ class PopupSelectTamagotchiVC: UIViewController, BaseViewControllerProtocol {
     }
     
     @IBAction func startClicked(_ sender: UITapGestureRecognizer) {
-        let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
-        let sceneDelegate = windowScene?.delegate as? SceneDelegate
-        
-        let sb = UIStoryboard(name: StoryBoardId.Main.rawValue, bundle: nil)
-        guard let vc = sb.instantiateViewController(withIdentifier: MainVC.identifier) as? MainVC else {
-            return
-        }
-        
-        UserDefaults.userInfo = UserInfo(tamagotchi: selectedTamagotchi)
-        vc.selectedTamagotchi = selectedTamagotchi
-        
-        sceneDelegate?.window?.rootViewController = UINavigationController(rootViewController: vc)
-        sceneDelegate?.window?.makeKeyAndVisible()
-    }
-    
-    @IBAction func changeClicked(_ sender: UITapGestureRecognizer) {
-        // 변경버튼 누를 시 모든 스택 날리고 MainVC 로 이동
-        
-        guard let selectedTamagotchi else {
-            showAlert(title: "", msg: "앱을 재실행해주세요", ok: "확인")
-            return
-        }
-        
-        UserDefaults.userInfo.tamagotchi?.type = selectedTamagotchi.type
-        
+        moveMainVC()
     }
     
     func designVC() {
@@ -91,16 +59,13 @@ class PopupSelectTamagotchiVC: UIViewController, BaseViewControllerProtocol {
         contentLabel.lineBreakMode = .byWordWrapping
         contentLabel.numberOfLines = 0
         contentLabel.textColor = MainColor.fontOrStroke.value
-//        contentLabel.sizeToFit()
-        
+        //        contentLabel.sizeToFit()
         
         cancelLabel.backgroundColor = .systemGray6
         cancelLabel.text = "취소"
-        startLabel.text = "시작하기"
-        changeLabel.text = "변경하기"
+        startLabel.text = UserDefaults.userInfo.tamagotchi == nil ? "시작하기" : "변경하기"
         designBottomLabel(outlet: cancelLabel)
         designBottomLabel(outlet: startLabel)
-        designBottomLabel(outlet: changeLabel)
     }
     
     func configVC() {
@@ -116,5 +81,31 @@ class PopupSelectTamagotchiVC: UIViewController, BaseViewControllerProtocol {
         label.textColor = MainColor.fontOrStroke.value
         label.textAlignment = .center
     }
-
+    
+    private func moveMainVC() {
+        let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
+        let sceneDelegate = windowScene?.delegate as? SceneDelegate
+        
+        let sb = UIStoryboard(name: StoryBoardId.Main.rawValue, bundle: nil)
+        guard let vc = sb.instantiateViewController(withIdentifier: MainVC.identifier) as? MainVC else {
+            return
+        }
+        
+        // 처음 시작유저
+        if UserDefaults.userInfo.tamagotchi == nil {
+            UserDefaults.userInfo.tamagotchi = selectedTamagotchi
+            vc.selectedTamagotchi = selectedTamagotchi
+        } else {
+            // 다마고치 변경하기
+            guard let _ = UserDefaults.userInfo.tamagotchi, let selectedTamagotchi else {
+                showAlert(title: "", msg: "앱을 재실행 해주세요", ok: "확인")
+                return
+            }
+            UserDefaults.userInfo.tamagotchi!.type = selectedTamagotchi.type
+        }
+        
+        sceneDelegate?.window?.rootViewController = UINavigationController(rootViewController: vc)
+        sceneDelegate?.window?.makeKeyAndVisible()
+    }
+    
 }

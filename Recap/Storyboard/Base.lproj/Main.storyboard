@@ -383,7 +383,7 @@
                                         <rect key="frame" x="0.0" y="350" width="315" height="50"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="caP-0e-Vcb">
-                                                <rect key="frame" x="0.0" y="0.0" width="105" height="50"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="157.66666666666666" height="50"/>
                                                 <gestureRecognizers/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
@@ -393,23 +393,13 @@
                                                 </connections>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NQy-Nb-cVy">
-                                                <rect key="frame" x="105" y="0.0" width="105" height="50"/>
+                                                <rect key="frame" x="157.66666666666663" y="0.0" width="157.33333333333337" height="50"/>
                                                 <gestureRecognizers/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                                 <connections>
                                                     <outletCollection property="gestureRecognizers" destination="XwS-jZ-SeE" appends="YES" id="zkL-lJ-5sd"/>
-                                                </connections>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bzh-9o-wtf">
-                                                <rect key="frame" x="210" y="0.0" width="105" height="50"/>
-                                                <gestureRecognizers/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                                <connections>
-                                                    <outletCollection property="gestureRecognizers" destination="wJQ-Ad-nQO" appends="YES" id="U39-bx-ITS"/>
                                                 </connections>
                                             </label>
                                         </subviews>
@@ -459,7 +449,6 @@
                     <connections>
                         <outlet property="baseLabel" destination="9aT-95-eYZ" id="Vsn-WE-Kwc"/>
                         <outlet property="cancelLabel" destination="caP-0e-Vcb" id="vpx-KE-EJW"/>
-                        <outlet property="changeLabel" destination="Bzh-9o-wtf" id="tvr-pS-bt7"/>
                         <outlet property="containerView" destination="hiC-YJ-nfx" id="J5I-07-SlG"/>
                         <outlet property="contentLabel" destination="Dvx-aN-iKh" id="EeO-GL-hE9"/>
                         <outlet property="nameStackView" destination="ls3-ip-eja" id="4m6-Ff-yNS"/>
@@ -477,11 +466,6 @@
                 <tapGestureRecognizer id="XwS-jZ-SeE">
                     <connections>
                         <action selector="startClicked:" destination="jgG-C3-y5o" id="FvR-Sk-Hzq"/>
-                    </connections>
-                </tapGestureRecognizer>
-                <tapGestureRecognizer id="wJQ-Ad-nQO">
-                    <connections>
-                        <action selector="changeClicked:" destination="jgG-C3-y5o" id="BLj-zK-7Yo"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
