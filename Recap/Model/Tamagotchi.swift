@@ -17,6 +17,9 @@ struct Tamagotchi: Codable {
     var imgName: String {
         return "\(type.rawValue)-\(level.rawValue)"
     }
+    var info: String {
+        return "LV\(level.rawValue) · 밥알 \(rice)개 · 물방울 \(water)개"
+    }
 }
 
 enum TamagotchiName: String, Codable {

@@ -38,6 +38,8 @@ class MainVC: UIViewController, BaseViewControllerProtocol {
 
     let randomStoryList = TamagotchiRandomStory().list
     
+    var selectedTamagotchi: Tamagotchi?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         designVC()
@@ -93,15 +95,22 @@ class MainVC: UIViewController, BaseViewControllerProtocol {
     }
     
     func configVC() {
-        
-        guard let tamagotchi = UserDefaults.userInfo.tamagotchi else {
-            print("오류!!!")
+        let currentTama = currentTamagotchi(selectedTama: selectedTamagotchi)
+        guard let currentTama else {
+            print("다마고치 nil")
             return
         }
-        
-        tamagotchiImageView.image = UIImage(named: tamagotchi.imgName)
-        tamagotchiInfoLabel.text = "LV\(tamagotchi.level.rawValue) · 밥알 \(tamagotchi.rice)개 · 물방울 \(tamagotchi.water)개"
-        typeLabel.text = tamagotchi.name.rawValue
+        tamagotchiImageView.image = UIImage(named: currentTama.imgName)
+        tamagotchiInfoLabel.text = currentTama.info
+        typeLabel.text = currentTama.name.rawValue
+    }
+    
+    private func currentTamagotchi(selectedTama: Tamagotchi?) -> Tamagotchi? {
+        guard let selectedTama else {
+            print("전달 받은 데이터 없음!!")
+             return UserDefaults.userInfo.tamagotchi
+        }
+        return selectedTama
     }
     
     /**
