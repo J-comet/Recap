@@ -70,17 +70,17 @@ extension SelectTamagotchiVC: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let sb = UIStoryboard(name: StoryBoardId.Main.rawValue, bundle: nil)
-        let vc = sb.instantiateViewController(withIdentifier: PopupSelectTamagotchiVC.identifier) as! PopupSelectTamagotchiVC
-        
-        vc.selectedTamagotchi = tamagochiInfo.getList()[indexPath.row]
-        
-        let nav = UINavigationController(rootViewController: vc)
-        nav.modalPresentationStyle = .overFullScreen
-        
+    
         if tamagochiInfo.getList()[indexPath.row].type == .ready {
             showAlert(title: TamagotchiName.ready.rawValue, msg: "", ok: "확인")
         } else {
+            let sb = UIStoryboard(name: StoryBoardId.Main.rawValue, bundle: nil)
+            let vc = sb.instantiateViewController(withIdentifier: PopupSelectTamagotchiVC.identifier) as! PopupSelectTamagotchiVC
+            
+            vc.selectedTamagotchi = tamagochiInfo.getList()[indexPath.row]
+            
+            let nav = UINavigationController(rootViewController: vc)
+            nav.modalPresentationStyle = .overFullScreen
             present(nav, animated: true)
         }
     }

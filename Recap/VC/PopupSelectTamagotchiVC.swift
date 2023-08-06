@@ -49,6 +49,7 @@ class PopupSelectTamagotchiVC: UIViewController, BaseViewControllerProtocol {
         selectedTamagotchi?.level = .lv1
         
         UserDefaults.userInfo = UserInfo(tamagotchi: selectedTamagotchi)
+        print("선택 다마고치 = ", UserDefaults.userInfo)
         
         sceneDelegate?.window?.rootViewController = UINavigationController(rootViewController: vc)
         sceneDelegate?.window?.makeKeyAndVisible()
