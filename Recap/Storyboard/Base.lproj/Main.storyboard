@@ -452,7 +452,7 @@
                         <outlet property="containerView" destination="hiC-YJ-nfx" id="J5I-07-SlG"/>
                         <outlet property="contentLabel" destination="Dvx-aN-iKh" id="EeO-GL-hE9"/>
                         <outlet property="nameStackView" destination="ls3-ip-eja" id="4m6-Ff-yNS"/>
-                        <outlet property="startLabel" destination="NQy-Nb-cVy" id="rT8-8H-jL3"/>
+                        <outlet property="okLabel" destination="NQy-Nb-cVy" id="rT8-8H-jL3"/>
                         <outlet property="thumbImageView" destination="EuJ-LY-g6b" id="DVK-bn-OLN"/>
                         <outlet property="typeLabel" destination="QFe-BA-XZS" id="Fxj-c1-bb2"/>
                     </connections>

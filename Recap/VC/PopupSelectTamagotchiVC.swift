@@ -20,7 +20,7 @@ class PopupSelectTamagotchiVC: UIViewController, BaseViewControllerProtocol {
     @IBOutlet var contentLabel: UILabel!
     
     @IBOutlet var cancelLabel: UILabel!
-    @IBOutlet var startLabel: UILabel!
+    @IBOutlet var okLabel: UILabel!
     
     var selectedTamagotchi: Tamagotchi?
     
@@ -30,7 +30,7 @@ class PopupSelectTamagotchiVC: UIViewController, BaseViewControllerProtocol {
         configVC()
         
         cancelLabel.isUserInteractionEnabled = true
-        startLabel.isUserInteractionEnabled = true
+        okLabel.isUserInteractionEnabled = true
     }
     
     @IBAction func cancelClicked(_ sender: UITapGestureRecognizer) {
@@ -63,9 +63,9 @@ class PopupSelectTamagotchiVC: UIViewController, BaseViewControllerProtocol {
         
         cancelLabel.backgroundColor = .systemGray6
         cancelLabel.text = "취소"
-        startLabel.text = UserDefaults.userInfo.tamagotchi == nil ? "시작하기" : "변경하기"
+        okLabel.text = UserDefaults.userInfo.tamagotchi == nil ? "시작하기" : "변경하기"
         designBottomLabel(outlet: cancelLabel)
-        designBottomLabel(outlet: startLabel)
+        designBottomLabel(outlet: okLabel)
     }
     
     func configVC() {

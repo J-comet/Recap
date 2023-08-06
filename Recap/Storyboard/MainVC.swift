@@ -34,9 +34,9 @@ extension FeedType {
     var img: String {
         switch self {
         case .rice:
-            return "drop.circle"
-        case .water:
             return "leaf.circle"
+        case .water:
+            return "drop.circle"
         }
     }
     

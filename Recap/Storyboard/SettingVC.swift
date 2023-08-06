@@ -34,6 +34,7 @@ class SettingVC: UIViewController, BaseViewControllerProtocol {
     func designVC() {
         settingTableView.rowHeight = 60
         settingTableView.separatorStyle = .singleLine
+        settingTableView.bounces = false
     }
     
     func configVC() {
@@ -86,7 +87,14 @@ extension SettingVC: UITableViewDelegate, UITableViewDataSource {
             let vc = sb.instantiateViewController(withIdentifier: SelectTamagotchiVC.identifier) as! SelectTamagotchiVC
             navigationController?.pushViewController(vc, animated: true)
         case .reset:
-            print("reset")
+            showAlert(title: "데이터 초기화", msg: "정말 다시 처음부터 시작하실 건가용?", ok: "웅", no: "아냐!") {(action) in
+                UserDefaults.userInfo = UserInfo(name: "대장", tamagotchi: nil)
+                let vc = sb.instantiateViewController(withIdentifier: SelectTamagotchiVC.identifier) as! SelectTamagotchiVC
+                let nav = UINavigationController(rootViewController: vc)
+                nav.modalPresentationStyle = .fullScreen
+                nav.modalTransitionStyle = .crossDissolve
+                self.present(nav, animated: true)
+            }
         }
         tableView.reloadRows(at: [indexPath], with: .fade)
     }
