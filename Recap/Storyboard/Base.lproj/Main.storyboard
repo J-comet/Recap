@@ -177,6 +177,9 @@
                                                 <rect key="frame" x="160" y="0.0" width="75" height="34.333333333333336"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                <connections>
+                                                    <action selector="riceButtonClicked:" destination="0XI-i2-5F7" eventType="touchUpInside" id="aYd-lA-gvT"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -192,6 +195,9 @@
                                                 <rect key="frame" x="160" y="0.0" width="75" height="34.333333333333336"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                <connections>
+                                                    <action selector="waterButtonClicked:" destination="0XI-i2-5F7" eventType="touchUpInside" id="D3U-uu-NTE"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>

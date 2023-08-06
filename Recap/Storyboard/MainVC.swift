@@ -64,6 +64,52 @@ class MainVC: UIViewController, BaseViewControllerProtocol {
         view.endEditing(true)
     }
     
+    @IBAction func riceButtonClicked(_ sender: UIButton) {
+        if selectedTamagotchi != nil {
+            if riceTextField.text?.count ?? 0 > 0 {
+                let input = Int(riceTextField.text!) ?? 0
+                if input > 99 {
+                    showAlert(title: "경고", msg: "밥은 99개까지 먹일 수 있어요.", ok: "확인")
+                    riceTextField.text = nil
+                    return
+                } else {
+                    selectedTamagotchi!.rice += Int(riceTextField.text!) ?? 0
+                    tamagotchiInfoLabel.text = selectedTamagotchi?.info
+                    riceTextField.text = nil
+                }
+            } else {
+                selectedTamagotchi!.rice += 1
+                tamagotchiInfoLabel.text = selectedTamagotchi?.info
+            }
+            
+            UserDefaults.userInfo.tamagotchi = selectedTamagotchi
+            tamagotchiImageView.image = UIImage(named: selectedTamagotchi!.imgName)
+        }
+    }
+    
+    @IBAction func waterButtonClicked(_ sender: UIButton) {
+        if selectedTamagotchi != nil {
+            if waterTextField.text?.count ?? 0 > 0 {
+                let input = Int(waterTextField.text!) ?? 0
+                if input > 49 {
+                    showAlert(title: "경고", msg: "물은 49개까지 먹일 수 있어요.", ok: "확인")
+                    waterTextField.text = nil
+                    return
+                } else {
+                    selectedTamagotchi!.water += Int(waterTextField.text!) ?? 0
+                    tamagotchiInfoLabel.text = selectedTamagotchi?.info
+                    waterTextField.text = nil
+                }
+            } else {
+                selectedTamagotchi!.water += 1
+                tamagotchiInfoLabel.text = selectedTamagotchi?.info
+            }
+            
+            UserDefaults.userInfo.tamagotchi = selectedTamagotchi
+            tamagotchiImageView.image = UIImage(named: selectedTamagotchi!.imgName)
+        }
+    }
+    
     func configNavigationBar() {
         title = "\(UserDefaults.userInfo.name)님의 다마고치"
         
@@ -103,6 +149,8 @@ class MainVC: UIViewController, BaseViewControllerProtocol {
         tamagotchiImageView.image = UIImage(named: currentTama.imgName)
         tamagotchiInfoLabel.text = currentTama.info
         typeLabel.text = currentTama.name.rawValue
+        
+        selectedTamagotchi = currentTama
     }
     
     private func currentTamagotchi(selectedTama: Tamagotchi?) -> Tamagotchi? {
@@ -178,7 +226,7 @@ class MainVC: UIViewController, BaseViewControllerProtocol {
         textField.borderStyle = .none
         textField.textAlignment = .center
         textField.customUnderLine(color: .black)
-        textField.keyboardType = .numbersAndPunctuation
+        textField.keyboardType = .numberPad
         textField.returnKeyType = .done
     }
     
