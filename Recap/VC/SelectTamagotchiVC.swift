@@ -78,17 +78,25 @@ extension SelectTamagotchiVC: UICollectionViewDelegate, UICollectionViewDataSour
         let row = tamagochiInfo.getList()[indexPath.row]
     
         if row.type == .ready {
-            showAlert(title: row.type.name, msg: "", ok: "확인")
-        } else {
-            let sb = UIStoryboard(name: StoryBoardId.Main.rawValue, bundle: nil)
-            let vc = sb.instantiateViewController(withIdentifier: PopupSelectTamagotchiVC.identifier) as! PopupSelectTamagotchiVC
-            
-            vc.selectedTamagotchi = row
-            
-            let nav = UINavigationController(rootViewController: vc)
-            nav.modalPresentationStyle = .overFullScreen
-            present(nav, animated: true)
+            showAlert(title: "", msg: row.type.name, ok: "확인")
+            return
         }
+        
+        if let tamagotchi = UserDefaults.userInfo.tamagotchi {
+            if row.type == tamagotchi.type {
+                showAlert(title: "", msg: "현재 키우고 있는 다마고치에요", ok: "확인")
+                return
+            }
+        }
+        
+        let sb = UIStoryboard(name: StoryBoardId.Main.rawValue, bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: PopupSelectTamagotchiVC.identifier) as! PopupSelectTamagotchiVC
+        
+        vc.selectedTamagotchi = row
+        
+        let nav = UINavigationController(rootViewController: vc)
+        nav.modalPresentationStyle = .overFullScreen
+        present(nav, animated: true)
     }
     
 }

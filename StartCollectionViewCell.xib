@@ -64,6 +64,7 @@
             <size key="customSize" width="306" height="307"/>
             <connections>
                 <outlet property="baseLabel" destination="hqh-gj-kpm" id="pRb-Em-aGI"/>
+                <outlet property="containerView" destination="afE-8e-Wrp" id="4aB-wz-J5W"/>
                 <outlet property="nameStackView" destination="SsD-iU-ZTF" id="Ozw-Q7-rF1"/>
                 <outlet property="thumbImageView" destination="NTg-03-A0Z" id="kzn-iR-G0v"/>
                 <outlet property="typeLabel" destination="qpb-Aa-9Ns" id="jLX-gI-IzW"/>
