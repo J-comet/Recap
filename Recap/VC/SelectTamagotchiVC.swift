@@ -9,7 +9,7 @@ import UIKit
 
 class SelectTamagotchiVC: UIViewController, BaseViewControllerProtocol {
     
-    static var identifier = "StartVC"
+    static var identifier = "SelectTamagotchiVC"
     
     @IBOutlet var collectionView: UICollectionView!
     
@@ -17,13 +17,17 @@ class SelectTamagotchiVC: UIViewController, BaseViewControllerProtocol {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        configNavigationBar()
         designVC()
         configVC()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        configNavigationBar()
+    }
+    
     func configNavigationBar() {
-        title = "다마고치 선택하기"
+        title = UserDefaults.userInfo.tamagotchi == nil ? "다마고치 선택하기" : "다마고치 변경하기"
     }
 
     func designVC() {
@@ -70,14 +74,16 @@ extension SelectTamagotchiVC: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let row = tamagochiInfo.getList()[indexPath.row]
     
-        if tamagochiInfo.getList()[indexPath.row].type == .ready {
-            showAlert(title: TamagotchiName.ready.rawValue, msg: "", ok: "확인")
+        if row.type == .ready {
+            showAlert(title: row.type.name, msg: "", ok: "확인")
         } else {
             let sb = UIStoryboard(name: StoryBoardId.Main.rawValue, bundle: nil)
             let vc = sb.instantiateViewController(withIdentifier: PopupSelectTamagotchiVC.identifier) as! PopupSelectTamagotchiVC
             
-            vc.selectedTamagotchi = tamagochiInfo.getList()[indexPath.row]
+            vc.selectedTamagotchi = row
             
             let nav = UINavigationController(rootViewController: vc)
             nav.modalPresentationStyle = .overFullScreen

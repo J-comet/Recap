@@ -198,7 +198,7 @@ class MainVC: UIViewController, BaseViewControllerProtocol {
         }
         tamagotchiImageView.image = UIImage(named: currentTama.imgName)
         tamagotchiInfoLabel.text = currentTama.info
-        typeLabel.text = currentTama.name.rawValue
+        typeLabel.text = currentTama.type.name
         
         selectedTamagotchi = currentTama
     }

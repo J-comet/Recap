@@ -21,6 +21,7 @@ class PopupSelectTamagotchiVC: UIViewController, BaseViewControllerProtocol {
     
     @IBOutlet var cancelLabel: UILabel!
     @IBOutlet var startLabel: UILabel!
+    @IBOutlet var changeLabel: UILabel!
     
     var selectedTamagotchi: Tamagotchi?
 
@@ -31,6 +32,13 @@ class PopupSelectTamagotchiVC: UIViewController, BaseViewControllerProtocol {
         
         cancelLabel.isUserInteractionEnabled = true
         startLabel.isUserInteractionEnabled = true
+        changeLabel.isUserInteractionEnabled = true
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        startLabel.isHidden = UserDefaults.userInfo.tamagotchi == nil ? false : true
+        changeLabel.isHidden = UserDefaults.userInfo.tamagotchi == nil ? true : false
     }
     
     @IBAction func cancelClicked(_ sender: UITapGestureRecognizer) {
@@ -53,6 +61,18 @@ class PopupSelectTamagotchiVC: UIViewController, BaseViewControllerProtocol {
         sceneDelegate?.window?.makeKeyAndVisible()
     }
     
+    @IBAction func changeClicked(_ sender: UITapGestureRecognizer) {
+        // 변경버튼 누를 시 모든 스택 날리고 MainVC 로 이동
+        
+        guard let selectedTamagotchi else {
+            showAlert(title: "", msg: "앱을 재실행해주세요", ok: "확인")
+            return
+        }
+        
+        UserDefaults.userInfo.tamagotchi?.type = selectedTamagotchi.type
+        
+    }
+    
     func designVC() {
         containerView.layer.cornerRadius = 8
         containerView.clipsToBounds = true
@@ -73,18 +93,21 @@ class PopupSelectTamagotchiVC: UIViewController, BaseViewControllerProtocol {
         contentLabel.textColor = MainColor.fontOrStroke.value
 //        contentLabel.sizeToFit()
         
-        cancelLabel.text = "취소"
+        
         cancelLabel.backgroundColor = .systemGray6
+        cancelLabel.text = "취소"
         startLabel.text = "시작하기"
+        changeLabel.text = "변경하기"
         designBottomLabel(outlet: cancelLabel)
         designBottomLabel(outlet: startLabel)
+        designBottomLabel(outlet: changeLabel)
     }
     
     func configVC() {
         if let selectedTamagotchi {
-            typeLabel.text = selectedTamagotchi.name.rawValue
+            typeLabel.text = selectedTamagotchi.type.name
             thumbImageView.image = UIImage(named: selectedTamagotchi.defaultImgName)
-            contentLabel.text = selectedTamagotchi.description.rawValue
+            contentLabel.text = selectedTamagotchi.type.description
         }
     }
     

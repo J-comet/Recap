@@ -12,7 +12,7 @@ struct Setting {
     var subTitle: String? = nil
 }
 
-enum SettingType: CaseIterable {
+enum SettingType {
     case name
     case tamagotchi
     case reset

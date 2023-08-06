@@ -76,14 +76,15 @@ extension SettingVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let row = list[indexPath.row]
+        let sb = UIStoryboard(name: StoryBoardId.Main.rawValue, bundle: nil)
         
         switch row.type {
         case .name:
-            let sb = UIStoryboard(name: StoryBoardId.Main.rawValue, bundle: nil)
             let vc = sb.instantiateViewController(withIdentifier: ChangeNameVC.identifier) as! ChangeNameVC
             navigationController?.pushViewController(vc, animated: true)
         case .tamagotchi:
-            print("tamagotchi")
+            let vc = sb.instantiateViewController(withIdentifier: SelectTamagotchiVC.identifier) as! SelectTamagotchiVC
+            navigationController?.pushViewController(vc, animated: true)
         case .reset:
             print("reset")
         }

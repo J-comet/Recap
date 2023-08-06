@@ -31,8 +31,8 @@ class StartCollectionViewCell: UICollectionViewCell, BaseCellProtocol {
     }
     
     func configureCell(row: Tamagotchi) {
-        baseLabel.isHidden = row.name == TamagotchiName.ready ? true : false
-        typeLabel.text = row.name.rawValue
+        baseLabel.isHidden = row.type == .ready ? true : false
+        typeLabel.text = row.type.name
         thumbImageView.image = row.type == .ready ? UIImage(named: "noImage") : UIImage(named: row.defaultImgName)
     }
 }
