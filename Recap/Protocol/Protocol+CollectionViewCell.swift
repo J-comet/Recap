@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol BaseCollectionViewCellProtocol {
+protocol BaseCellProtocol {
     associatedtype T
     static var identifier: String { get }
     func designCell()

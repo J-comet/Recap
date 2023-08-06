@@ -53,7 +53,9 @@ class MainVC: UIViewController, BaseViewControllerProtocol {
     }
     
     @objc func settingButtonClicked(_ sender: UIBarButtonItem) {
-        print(#function)
+        let sb = UIStoryboard(name: StoryBoardId.Main.rawValue, bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: SettingVC.identifier) as! SettingVC
+        navigationController?.pushViewController(vc, animated: true)
     }
     
 //    @IBAction func bottomDoneClicked(_ sender: UIButton) {

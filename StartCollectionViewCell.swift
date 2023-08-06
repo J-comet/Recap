@@ -7,7 +7,7 @@
 
 import UIKit
 
-class StartCollectionViewCell: UICollectionViewCell, BaseCollectionViewCellProtocol {
+class StartCollectionViewCell: UICollectionViewCell, BaseCellProtocol {
     
     typealias T = Tamagotchi
     static var identifier = "StartCollectionViewCell"
