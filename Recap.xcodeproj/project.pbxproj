@@ -35,6 +35,11 @@
 		C0A4050B2A7F7C9B00C7C1CE /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A4050A2A7F7C9B00C7C1CE /* Setting.swift */; };
 		C0A4050D2A7F7EAA00C7C1CE /* SettingInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A4050C2A7F7EAA00C7C1CE /* SettingInfo.swift */; };
 		C0A4050F2A7F8AC900C7C1CE /* ChangeNameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A4050E2A7F8AC900C7C1CE /* ChangeNameVC.swift */; };
+		C0A405462A80C56800C7C1CE /* TutorialVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A405452A80C56800C7C1CE /* TutorialVC.swift */; };
+		C0A405492A80C66200C7C1CE /* TutorialCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A405472A80C66200C7C1CE /* TutorialCollectionViewCell.swift */; };
+		C0A4054A2A80C66200C7C1CE /* TutorialCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0A405482A80C66200C7C1CE /* TutorialCollectionViewCell.xib */; };
+		C0A4054C2A80C6FA00C7C1CE /* Tutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A4054B2A80C6FA00C7C1CE /* Tutorial.swift */; };
+		C0A4054E2A80C73F00C7C1CE /* TutorialInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A4054D2A80C73F00C7C1CE /* TutorialInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +72,11 @@
 		C0A4050A2A7F7C9B00C7C1CE /* Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
 		C0A4050C2A7F7EAA00C7C1CE /* SettingInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingInfo.swift; sourceTree = "<group>"; };
 		C0A4050E2A7F8AC900C7C1CE /* ChangeNameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ChangeNameVC.swift; path = Recap/Storyboard/ChangeNameVC.swift; sourceTree = SOURCE_ROOT; };
+		C0A405452A80C56800C7C1CE /* TutorialVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TutorialVC.swift; path = Recap/Storyboard/TutorialVC.swift; sourceTree = SOURCE_ROOT; };
+		C0A405472A80C66200C7C1CE /* TutorialCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialCollectionViewCell.swift; sourceTree = "<group>"; };
+		C0A405482A80C66200C7C1CE /* TutorialCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TutorialCollectionViewCell.xib; sourceTree = "<group>"; };
+		C0A4054B2A80C6FA00C7C1CE /* Tutorial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tutorial.swift; sourceTree = "<group>"; };
+		C0A4054D2A80C73F00C7C1CE /* TutorialInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +98,8 @@
 				C0069AE12A7CD720005E8128 /* StartCollectionViewCell.xib */,
 				C0A405062A7F7BF600C7C1CE /* SettingTableViewCell.swift */,
 				C0A405072A7F7BF600C7C1CE /* SettingTableViewCell.xib */,
+				C0A405472A80C66200C7C1CE /* TutorialCollectionViewCell.swift */,
+				C0A405482A80C66200C7C1CE /* TutorialCollectionViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -101,6 +113,8 @@
 				C0A404FF2A7EBF3200C7C1CE /* TamagotchiRandomStory.swift */,
 				C0A4050A2A7F7C9B00C7C1CE /* Setting.swift */,
 				C0A4050C2A7F7EAA00C7C1CE /* SettingInfo.swift */,
+				C0A4054B2A80C6FA00C7C1CE /* Tutorial.swift */,
+				C0A4054D2A80C73F00C7C1CE /* TutorialInfo.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -162,6 +176,7 @@
 		C00F2E012A7CD084004729B9 /* VC */ = {
 			isa = PBXGroup;
 			children = (
+				C0A405452A80C56800C7C1CE /* TutorialVC.swift */,
 				C0A4050E2A7F8AC900C7C1CE /* ChangeNameVC.swift */,
 				C0A405042A7F763600C7C1CE /* SettingVC.swift */,
 				C0069AFE2A7E39BD005E8128 /* MainVC.swift */,
@@ -252,6 +267,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0A4054A2A80C66200C7C1CE /* TutorialCollectionViewCell.xib in Resources */,
 				C00F2DFA2A7CBAAD004729B9 /* LaunchScreen.storyboard in Resources */,
 				C0069AE32A7CD720005E8128 /* StartCollectionViewCell.xib in Resources */,
 				C00F2DF72A7CBAAD004729B9 /* Assets.xcassets in Resources */,
@@ -276,9 +292,12 @@
 				C00F2DF22A7CBAAC004729B9 /* SelectTamagotchiVC.swift in Sources */,
 				C0069AF52A7E0BE6005E8128 /* Extension+ViewController.swift in Sources */,
 				C0069AE82A7CDD88005E8128 /* Tamagotchi.swift in Sources */,
+				C0A405462A80C56800C7C1CE /* TutorialVC.swift in Sources */,
 				C0069AFD2A7E3911005E8128 /* UserInfo.swift in Sources */,
 				C0069AFB2A7E372A005E8128 /* Extension+UserDefaults.swift in Sources */,
+				C0A405492A80C66200C7C1CE /* TutorialCollectionViewCell.swift in Sources */,
 				C0A4050B2A7F7C9B00C7C1CE /* Setting.swift in Sources */,
+				C0A4054C2A80C6FA00C7C1CE /* Tutorial.swift in Sources */,
 				C0069B022A7E518A005E8128 /* Enum+Storyboard.swift in Sources */,
 				C00F2DEE2A7CBAAC004729B9 /* AppDelegate.swift in Sources */,
 				C0A405082A7F7BF600C7C1CE /* SettingTableViewCell.swift in Sources */,
@@ -287,6 +306,7 @@
 				C0069AE22A7CD720005E8128 /* StartCollectionViewCell.swift in Sources */,
 				C0069AEF2A7E037C005E8128 /* TamagotchiInfo.swift in Sources */,
 				C0A405002A7EBF3200C7C1CE /* TamagotchiRandomStory.swift in Sources */,
+				C0A4054E2A80C73F00C7C1CE /* TutorialInfo.swift in Sources */,
 				C0069AF92A7E3508005E8128 /* Extension+View.swift in Sources */,
 				C00F2DF02A7CBAAC004729B9 /* SceneDelegate.swift in Sources */,
 			);

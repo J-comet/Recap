@@ -27,12 +27,22 @@ extension UIStackView {
 
 extension UITextField {
     // iPhone 14 Pro Max 가로 스택뷰 안에서 trailling 라인 다 보이지 않는 이슈=
-//    func customUnderLine(color: UIColor) {
-//        self.borderStyle = .none
-//        let border = CALayer()
-//        border.frame = CGRect(x: 0, y: self.frame.height, width: self.frame.width, height: 1)
-//        border.backgroundColor = color.cgColor
-//        self.layer.addSublayer(border)
-//        self.layer.masksToBounds = true
-//    }
+    //    func customUnderLine(color: UIColor) {
+    //        self.borderStyle = .none
+    //        let border = CALayer()
+    //        border.frame = CGRect(x: 0, y: self.frame.height, width: self.frame.width, height: 1)
+    //        border.backgroundColor = color.cgColor
+    //        self.layer.addSublayer(border)
+    //        self.layer.masksToBounds = true
+    //    }
+}
+
+extension UICollectionView {
+    func scrollToNextItem() {
+        let contentOffset = CGFloat(floor(self.contentOffset.x + self.bounds.size.width))
+        self.moveToFrame(contentOffset: contentOffset)
+    }
+    func moveToFrame(contentOffset : CGFloat) {
+        self.setContentOffset(CGPoint(x: contentOffset, y: self.contentOffset.y), animated: true)
+    }
 }

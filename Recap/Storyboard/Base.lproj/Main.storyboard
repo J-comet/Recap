@@ -527,6 +527,80 @@
             </objects>
             <point key="canvasLocation" x="320" y="715"/>
         </scene>
+        <!--TutorialVC-->
+        <scene sceneID="zaG-WJ-R8q">
+            <objects>
+                <viewController storyboardIdentifier="TutorialVC" id="fKz-QG-qVo" customClass="TutorialVC" customModule="Recap" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BBm-Hj-PYE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="pkA-Q3-78z">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="778"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="jr0-In-XwE">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="h1M-Kd-jKg">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="nrb-XS-7Qg">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="juz-0V-a19">
+                                <rect key="frame" x="40" y="722" width="295" height="40"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="zI3-Gq-3Sr"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="o8l-nv-08a" appends="YES" id="ftW-Py-dse"/>
+                                </connections>
+                            </label>
+                            <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="6Uk-3p-Hm9">
+                                <rect key="frame" x="129.66666666666666" y="666" width="116" height="26"/>
+                            </pageControl>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="PEm-Of-Ow5"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="pkA-Q3-78z" firstAttribute="top" secondItem="BBm-Hj-PYE" secondAttribute="top" id="1gm-MV-WL4"/>
+                            <constraint firstItem="6Uk-3p-Hm9" firstAttribute="centerX" secondItem="BBm-Hj-PYE" secondAttribute="centerX" id="3zK-3I-QQ8"/>
+                            <constraint firstItem="PEm-Of-Ow5" firstAttribute="trailing" secondItem="pkA-Q3-78z" secondAttribute="trailing" id="7rt-U1-aKi"/>
+                            <constraint firstItem="juz-0V-a19" firstAttribute="leading" secondItem="PEm-Of-Ow5" secondAttribute="leading" constant="40" id="8lB-yq-I6X"/>
+                            <constraint firstItem="PEm-Of-Ow5" firstAttribute="bottom" secondItem="pkA-Q3-78z" secondAttribute="bottom" id="CmG-Cz-im8"/>
+                            <constraint firstItem="juz-0V-a19" firstAttribute="top" secondItem="6Uk-3p-Hm9" secondAttribute="bottom" constant="30" id="FSB-eE-6YB"/>
+                            <constraint firstItem="PEm-Of-Ow5" firstAttribute="trailing" secondItem="juz-0V-a19" secondAttribute="trailing" constant="40" id="UTE-HI-jVL"/>
+                            <constraint firstItem="pkA-Q3-78z" firstAttribute="leading" secondItem="PEm-Of-Ow5" secondAttribute="leading" id="bh3-HS-heJ"/>
+                            <constraint firstItem="PEm-Of-Ow5" firstAttribute="bottom" secondItem="juz-0V-a19" secondAttribute="bottom" constant="16" id="pKH-9a-cXi"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="pkA-Q3-78z" id="qst-RA-M1Y"/>
+                        <outlet property="pagerControl" destination="6Uk-3p-Hm9" id="Zhh-xx-UUg"/>
+                        <outlet property="startLabel" destination="juz-0V-a19" id="0QE-rI-9lo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SWp-gk-3vn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="o8l-nv-08a">
+                    <connections>
+                        <action selector="startLabelClicked:" destination="fKz-QG-qVo" id="9XB-iQ-wpn"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="477.60000000000002" y="-761.08374384236458"/>
+        </scene>
     </scenes>
     <resources>
         <namedColor name="AccentColor">

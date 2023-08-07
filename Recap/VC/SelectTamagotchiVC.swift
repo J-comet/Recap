@@ -74,7 +74,6 @@ extension SelectTamagotchiVC: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
         let row = tamagochiInfo.getList()[indexPath.row]
     
         if row.type == .ready {
@@ -93,7 +92,7 @@ extension SelectTamagotchiVC: UICollectionViewDelegate, UICollectionViewDataSour
         let vc = sb.instantiateViewController(withIdentifier: PopupSelectTamagotchiVC.identifier) as! PopupSelectTamagotchiVC
         
         vc.selectedTamagotchi = row
-        
+    
         let nav = UINavigationController(rootViewController: vc)
         nav.modalPresentationStyle = .overFullScreen
         present(nav, animated: true)

@@ -27,11 +27,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let sb = UIStoryboard(name: StoryBoardId.Main.rawValue, bundle: nil)
         
         if isLaunched {
-            UserDefaults.isLaunched = false
-            guard let vc = sb.instantiateViewController(withIdentifier: SelectTamagotchiVC.identifier) as? SelectTamagotchiVC else {
+            guard let vc = sb.instantiateViewController(withIdentifier: TutorialVC.identifier) as? TutorialVC else {
                 return
             }
-            window?.rootViewController = UINavigationController(rootViewController: vc)
+            window?.rootViewController = vc
             window?.makeKeyAndVisible()
         } else {
             let vc = UserDefaults.userInfo.tamagotchi == nil ? sb.instantiateViewController(withIdentifier: SelectTamagotchiVC.identifier) as? SelectTamagotchiVC : sb.instantiateViewController(withIdentifier: MainVC.identifier) as? MainVC

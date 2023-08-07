@@ -32,6 +32,7 @@ class StartCollectionViewCell: UICollectionViewCell, BaseCellProtocol {
     }
     
     func configureCell(row: Tamagotchi) {
+        containerView.alpha = 1
         if let tamagotchi = UserDefaults.userInfo.tamagotchi {
             if row.type == tamagotchi.type {
                 containerView.alpha = 0.3
