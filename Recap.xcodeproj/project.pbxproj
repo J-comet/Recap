@@ -438,6 +438,7 @@
 				DEVELOPMENT_TEAM = SV3K237PCX;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Recap/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "장혜성_다마고치";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -467,6 +468,7 @@
 				DEVELOPMENT_TEAM = SV3K237PCX;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Recap/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "장혜성_다마고치";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

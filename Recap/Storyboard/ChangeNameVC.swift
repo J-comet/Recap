@@ -27,7 +27,6 @@ class ChangeNameVC: UIViewController, BaseViewControllerProtocol {
     
     func designVC() {
         nameTextField.placeholder = "대장님 이름을 알려주세요!"
-        nameTextField.customUnderLine(color: .black)
         nameTextField.borderStyle = .none
         nameTextField.keyboardType = .namePhonePad
         nameTextField.returnKeyType = .done

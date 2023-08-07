@@ -275,7 +275,6 @@ class MainVC: UIViewController, BaseViewControllerProtocol {
         textField.placeholder = placeHolder
         textField.borderStyle = .none
         textField.textAlignment = .center
-        textField.customUnderLine(color: .black)
         textField.keyboardType = .numberPad
         textField.returnKeyType = .done
     }

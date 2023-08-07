@@ -26,11 +26,13 @@ extension UIStackView {
 }
 
 extension UITextField {
-    func customUnderLine(color: UIColor) {
-        let border = CALayer()
-        border.frame = CGRect(x: 0, y: self.frame.size.height, width:  self.frame.size.width - 10, height: 1)
-        border.backgroundColor = color.cgColor
-        self.layer.addSublayer(border)
-        self.layer.masksToBounds = true
-    }
+    // iPhone 14 Pro Max 가로 스택뷰 안에서 trailling 라인 다 보이지 않는 이슈=
+//    func customUnderLine(color: UIColor) {
+//        self.borderStyle = .none
+//        let border = CALayer()
+//        border.frame = CGRect(x: 0, y: self.frame.height, width: self.frame.width, height: 1)
+//        border.backgroundColor = color.cgColor
+//        self.layer.addSublayer(border)
+//        self.layer.masksToBounds = true
+//    }
 }
