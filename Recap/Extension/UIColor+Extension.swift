@@ -1,8 +1,8 @@
 //
-//  Extensioni+UIColor.swift
+//  UIColor+Extension.swift
 //  Recap
 //
-//  Created by 장혜성 on 2023/08/04.
+//  Created by 장혜성 on 2023/08/13.
 //
 
 import UIKit
