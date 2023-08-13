@@ -7,50 +7,12 @@
 
 import UIKit
 
-enum FeedType {
-    case rice
-    case water
-}
-
-extension FeedType {
-    var buttonTitle: String {
-        switch self {
-        case .rice:
-            return "밥먹기"
-        case .water:
-            return "물먹기"
-        }
-    }
-    
-    var placeText: String {
-        switch self {
-        case .rice:
-            return "밥주세용"
-        case .water:
-            return "물주세용"
-        }
-    }
-    
-    var img: String {
-        switch self {
-        case .rice:
-            return "leaf.circle"
-        case .water:
-            return "drop.circle"
-        }
-    }
-    
-    var errorMsg: String {
-        switch self {
-        case .rice:
-            return "밥은 99개까지 먹일 수 있어요"
-        case .water:
-            return "물은 49개까지 먹일 수 있어요"
-        }
-    }
-}
-
 class MainVC: UIViewController, BaseViewControllerProtocol {
+    
+    enum FeedType {
+        case rice
+        case water
+    }
     
     static var identifier = "MainVC"
     
@@ -279,4 +241,42 @@ class MainVC: UIViewController, BaseViewControllerProtocol {
         textField.returnKeyType = .done
     }
     
+}
+
+extension MainVC.FeedType {
+    var buttonTitle: String {
+        switch self {
+        case .rice:
+            return "밥먹기"
+        case .water:
+            return "물먹기"
+        }
+    }
+    
+    var placeText: String {
+        switch self {
+        case .rice:
+            return "밥주세용"
+        case .water:
+            return "물주세용"
+        }
+    }
+    
+    var img: String {
+        switch self {
+        case .rice:
+            return "leaf.circle"
+        case .water:
+            return "drop.circle"
+        }
+    }
+    
+    var errorMsg: String {
+        switch self {
+        case .rice:
+            return "밥은 99개까지 먹일 수 있어요"
+        case .water:
+            return "물은 49개까지 먹일 수 있어요"
+        }
+    }
 }
