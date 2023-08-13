@@ -57,7 +57,7 @@ class MainVC: UIViewController, BaseViewControllerProtocol {
     
     @objc func settingButtonClicked(_ sender: UIBarButtonItem) {
         let sb = UIStoryboard(name: StoryBoardId.Main.rawValue, bundle: nil)
-        let vc = sb.instantiateViewController(withIdentifier: SettingVC.identifier) as! SettingVC
+        guard let vc = sb.instantiateViewController(withIdentifier: SettingVC.identifier) as? SettingVC else { return }
         navigationController?.pushViewController(vc, animated: true)
     }
     

@@ -79,15 +79,17 @@ extension SettingVC: UITableViewDelegate, UITableViewDataSource {
         
         switch row.type {
         case .name:
-            let vc = sb.instantiateViewController(withIdentifier: ChangeNameVC.identifier) as! ChangeNameVC
+            guard let vc = sb.instantiateViewController(withIdentifier: ChangeNameVC.identifier) as? ChangeNameVC else { return }
             navigationController?.pushViewController(vc, animated: true)
         case .tamagotchi:
-            let vc = sb.instantiateViewController(withIdentifier: SelectTamagotchiVC.identifier) as! SelectTamagotchiVC
+            guard let vc = sb.instantiateViewController(withIdentifier: SelectTamagotchiVC.identifier) as? SelectTamagotchiVC else  { return }
             navigationController?.pushViewController(vc, animated: true)
         case .reset:
             showAlert(title: "데이터 초기화", msg: "정말 다시 처음부터 시작하실 건가용?", ok: "웅", no: "아냐!") {(action) in
                 UserDefaults.userInfo = UserInfo(name: "대장", tamagotchi: nil)
-                let vc = sb.instantiateViewController(withIdentifier: SelectTamagotchiVC.identifier) as! SelectTamagotchiVC
+                guard let vc = sb.instantiateViewController(withIdentifier: SelectTamagotchiVC.identifier) as? SelectTamagotchiVC else {
+                    return
+                }
                 let nav = UINavigationController(rootViewController: vc)
                 nav.modalPresentationStyle = .fullScreen
                 nav.modalTransitionStyle = .crossDissolve
