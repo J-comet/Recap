@@ -9,8 +9,6 @@ import UIKit
 
 class SettingVC: UIViewController, BaseViewControllerProtocol {
     
-    static var identifier = "SettingVC"
-    
     @IBOutlet var settingTableView: UITableView!
     
     var list: [Setting] = [] {

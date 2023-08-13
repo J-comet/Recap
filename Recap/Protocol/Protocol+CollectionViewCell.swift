@@ -9,7 +9,6 @@ import Foundation
 
 protocol BaseCellProtocol {
     associatedtype T
-    static var identifier: String { get }
     func designCell()
     func configureCell(row: T)
 }

@@ -10,7 +10,6 @@ import UIKit
 class StartCollectionViewCell: UICollectionViewCell, BaseCellProtocol {
     
     typealias T = Tamagotchi
-    static var identifier = "StartCollectionViewCell"
     
     @IBOutlet var containerView: UIView!
     @IBOutlet var thumbImageView: UIImageView!

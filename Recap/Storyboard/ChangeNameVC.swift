@@ -9,8 +9,6 @@ import UIKit
 
 class ChangeNameVC: UIViewController, BaseViewControllerProtocol {
     
-    static var identifier = "ChangeNameVC"
-    
     @IBOutlet var nameTextField: UITextField!
     
     override func viewDidLoad() {

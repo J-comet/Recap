@@ -9,8 +9,6 @@ import UIKit
 
 class PopupSelectTamagotchiVC: UIViewController, BaseViewControllerProtocol {
     
-    static var identifier = "PopupSelectTamagotchiVC"
-    
     @IBOutlet var containerView: UIView!
     @IBOutlet var thumbImageView: UIImageView!
     

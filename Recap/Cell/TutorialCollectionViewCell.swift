@@ -9,7 +9,6 @@ import UIKit
 
 class TutorialCollectionViewCell: UICollectionViewCell, BaseCellProtocol {
     
-    static var identifier = "TutorialCollectionViewCell"
     typealias T = Tutorial
 
     @IBOutlet var mainImageView: UIImageView!

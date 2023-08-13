@@ -8,7 +8,6 @@
 import UIKit
 
 class TutorialVC: UIViewController, BaseViewControllerProtocol {
-    static var identifier = "TutorialVC"
     
     @IBOutlet var collectionView: UICollectionView!
     

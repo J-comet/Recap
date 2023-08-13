@@ -14,8 +14,6 @@ class MainVC: UIViewController, BaseViewControllerProtocol {
         case water
     }
     
-    static var identifier = "MainVC"
-    
     @IBOutlet var bottomDoneView: UIView!
     @IBOutlet var bottomDoneLabel: UILabel!
     @IBOutlet var bottomDoneButton: UIButton!

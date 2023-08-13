@@ -9,8 +9,6 @@ import UIKit
 
 class SelectTamagotchiVC: UIViewController, BaseViewControllerProtocol {
     
-    static var identifier = "SelectTamagotchiVC"
-    
     @IBOutlet var collectionView: UICollectionView!
     
     let tamagochiInfo = TamagotchiInfo()

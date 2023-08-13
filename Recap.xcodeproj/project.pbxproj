@@ -27,6 +27,7 @@
 		C00F2DF72A7CBAAD004729B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C00F2DF62A7CBAAD004729B9 /* Assets.xcassets */; };
 		C00F2DFA2A7CBAAD004729B9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C00F2DF82A7CBAAD004729B9 /* LaunchScreen.storyboard */; };
 		C00F2E052A7CD47D004729B9 /* Protocol+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00F2E042A7CD47D004729B9 /* Protocol+UIViewController.swift */; };
+		C032ACD22A88C38D00592045 /* ReusableViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C032ACD12A88C38D00592045 /* ReusableViewProtocol.swift */; };
 		C0A405002A7EBF3200C7C1CE /* TamagotchiRandomStory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A404FF2A7EBF3200C7C1CE /* TamagotchiRandomStory.swift */; };
 		C0A405032A7F517C00C7C1CE /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = C0A405022A7F517C00C7C1CE /* IQKeyboardManagerSwift */; };
 		C0A405052A7F763600C7C1CE /* SettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A405042A7F763600C7C1CE /* SettingVC.swift */; };
@@ -65,6 +66,7 @@
 		C00F2DF92A7CBAAD004729B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C00F2DFB2A7CBAAD004729B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C00F2E042A7CD47D004729B9 /* Protocol+UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Protocol+UIViewController.swift"; sourceTree = "<group>"; };
+		C032ACD12A88C38D00592045 /* ReusableViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableViewProtocol.swift; sourceTree = "<group>"; };
 		C0A404FF2A7EBF3200C7C1CE /* TamagotchiRandomStory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TamagotchiRandomStory.swift; sourceTree = "<group>"; };
 		C0A405042A7F763600C7C1CE /* SettingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingVC.swift; path = Recap/Storyboard/SettingVC.swift; sourceTree = SOURCE_ROOT; };
 		C0A405062A7F7BF600C7C1CE /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
@@ -199,6 +201,7 @@
 			children = (
 				C00F2E042A7CD47D004729B9 /* Protocol+UIViewController.swift */,
 				C0069AE42A7CD8DD005E8128 /* Protocol+CollectionViewCell.swift */,
+				C032ACD12A88C38D00592045 /* ReusableViewProtocol.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -285,6 +288,7 @@
 			files = (
 				C0069AE52A7CD8DD005E8128 /* Protocol+CollectionViewCell.swift in Sources */,
 				C0A405052A7F763600C7C1CE /* SettingVC.swift in Sources */,
+				C032ACD22A88C38D00592045 /* ReusableViewProtocol.swift in Sources */,
 				C0069AFF2A7E39BD005E8128 /* MainVC.swift in Sources */,
 				C0069AEB2A7CF039005E8128 /* Extension+UIColor.swift in Sources */,
 				C00F2E052A7CD47D004729B9 /* Protocol+UIViewController.swift in Sources */,

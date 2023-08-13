@@ -9,8 +9,6 @@ import UIKit
 
 class SettingTableViewCell: UITableViewCell, BaseCellProtocol {
     typealias T = Setting
-    
-    static var identifier = "SettingTableViewCell"
 
     @IBOutlet var iconImageView: UIImageView!
     @IBOutlet var titleLabel: UILabel!
