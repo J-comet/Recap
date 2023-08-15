@@ -11,8 +11,6 @@ class SelectTamagotchiVC: UIViewController, BaseViewControllerProtocol {
     
     @IBOutlet var collectionView: UICollectionView!
     
-    let tamagochiInfo = TamagotchiInfo()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         designVC()
@@ -58,7 +56,7 @@ class SelectTamagotchiVC: UIViewController, BaseViewControllerProtocol {
 
 extension SelectTamagotchiVC: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return tamagochiInfo.getList().count
+        return TamagotchiInfo.getList().count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -67,12 +65,12 @@ extension SelectTamagotchiVC: UICollectionViewDelegate, UICollectionViewDataSour
             return UICollectionViewCell()
         }
         
-        cell.configureCell(row: tamagochiInfo.getList()[indexPath.row])
+        cell.configureCell(row: TamagotchiInfo.getList()[indexPath.row])
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let row = tamagochiInfo.getList()[indexPath.row]
+        let row = TamagotchiInfo.getList()[indexPath.row]
     
         if row.type == .ready {
             showAlert(title: "", msg: row.type.name, ok: "확인")

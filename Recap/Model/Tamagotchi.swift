@@ -30,28 +30,32 @@ struct Tamagotchi: Codable {
     }
     var level: TamagotchiLevel {
         let sum = CGFloat((rice / 5) + (water / 2))
-        switch sum {
-        case 0..<20:
-            return .lv1
-        case 20..<30:
-            return .lv2
-        case 30..<40:
-            return .lv3
-        case 40..<50:
-            return .lv4
-        case 50..<60:
-            return .lv5
-        case 60..<70:
-            return .lv6
-        case 70..<80:
-            return .lv7
-        case 80..<90:
-            return .lv8
-        case 90..<100:
-            return .lv9
-        default:
-            return .lv10
-        }
+        let result = Int(sum / 10)
+        print("레벨 = ", TamagotchiLevel(rawValue: result) ?? .lv10)
+        return TamagotchiLevel(rawValue: result) ?? .lv10
+        
+//        switch sum {
+//        case 0..<20:
+//            return .lv1
+//        case 20..<30:
+//            return .lv2
+//        case 30..<40:
+//            return .lv3
+//        case 40..<50:
+//            return .lv4
+//        case 50..<60:
+//            return .lv5
+//        case 60..<70:
+//            return .lv6
+//        case 70..<80:
+//            return .lv7
+//        case 80..<90:
+//            return .lv8
+//        case 90..<100:
+//            return .lv9
+//        default:
+//            return .lv10
+//        }
     }
 }
 

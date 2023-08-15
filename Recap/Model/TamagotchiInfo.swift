@@ -7,9 +7,9 @@
 
 import Foundation
 
-struct TamagotchiInfo {
+enum TamagotchiInfo {
 
-    func getList() -> [Tamagotchi] {
+    static func getList() -> [Tamagotchi] {
         var list: [Tamagotchi] = []
         for i in 0..<30 {
             var tamagotchi: Tamagotchi

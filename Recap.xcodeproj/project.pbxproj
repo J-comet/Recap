@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		C0069AE22A7CD720005E8128 /* StartCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0069AE02A7CD720005E8128 /* StartCollectionViewCell.swift */; };
 		C0069AE32A7CD720005E8128 /* StartCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0069AE12A7CD720005E8128 /* StartCollectionViewCell.xib */; };
-		C0069AE52A7CD8DD005E8128 /* Protocol+CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0069AE42A7CD8DD005E8128 /* Protocol+CollectionViewCell.swift */; };
+		C0069AE52A7CD8DD005E8128 /* BaseCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0069AE42A7CD8DD005E8128 /* BaseCellProtocol.swift */; };
 		C0069AE82A7CDD88005E8128 /* Tamagotchi.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0069AE72A7CDD88005E8128 /* Tamagotchi.swift */; };
 		C0069AEF2A7E037C005E8128 /* TamagotchiInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0069AEE2A7E037C005E8128 /* TamagotchiInfo.swift */; };
 		C0069AF32A7E079D005E8128 /* PopupSelectTamagotchiVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0069AF22A7E079D005E8128 /* PopupSelectTamagotchiVC.swift */; };
@@ -22,7 +22,7 @@
 		C00F2DF52A7CBAAC004729B9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C00F2DF32A7CBAAC004729B9 /* Main.storyboard */; };
 		C00F2DF72A7CBAAD004729B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C00F2DF62A7CBAAD004729B9 /* Assets.xcassets */; };
 		C00F2DFA2A7CBAAD004729B9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C00F2DF82A7CBAAD004729B9 /* LaunchScreen.storyboard */; };
-		C00F2E052A7CD47D004729B9 /* Protocol+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00F2E042A7CD47D004729B9 /* Protocol+UIViewController.swift */; };
+		C00F2E052A7CD47D004729B9 /* BaseViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00F2E042A7CD47D004729B9 /* BaseViewControllerProtocol.swift */; };
 		C032ACD22A88C38D00592045 /* ReusableViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C032ACD12A88C38D00592045 /* ReusableViewProtocol.swift */; };
 		C032ACD42A88C5D600592045 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C032ACD32A88C5D600592045 /* UILabel+Extension.swift */; };
 		C032ACD62A88C5FE00592045 /* UIStackView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C032ACD52A88C5FE00592045 /* UIStackView+Extension.swift */; };
@@ -48,7 +48,7 @@
 /* Begin PBXFileReference section */
 		C0069AE02A7CD720005E8128 /* StartCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
 		C0069AE12A7CD720005E8128 /* StartCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StartCollectionViewCell.xib; sourceTree = SOURCE_ROOT; };
-		C0069AE42A7CD8DD005E8128 /* Protocol+CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Protocol+CollectionViewCell.swift"; sourceTree = "<group>"; };
+		C0069AE42A7CD8DD005E8128 /* BaseCellProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCellProtocol.swift; sourceTree = "<group>"; };
 		C0069AE72A7CDD88005E8128 /* Tamagotchi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tamagotchi.swift; sourceTree = "<group>"; };
 		C0069AEE2A7E037C005E8128 /* TamagotchiInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TamagotchiInfo.swift; sourceTree = "<group>"; };
 		C0069AF22A7E079D005E8128 /* PopupSelectTamagotchiVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupSelectTamagotchiVC.swift; sourceTree = "<group>"; };
@@ -63,7 +63,7 @@
 		C00F2DF62A7CBAAD004729B9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C00F2DF92A7CBAAD004729B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C00F2DFB2A7CBAAD004729B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C00F2E042A7CD47D004729B9 /* Protocol+UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Protocol+UIViewController.swift"; sourceTree = "<group>"; };
+		C00F2E042A7CD47D004729B9 /* BaseViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewControllerProtocol.swift; sourceTree = "<group>"; };
 		C032ACD12A88C38D00592045 /* ReusableViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableViewProtocol.swift; sourceTree = "<group>"; };
 		C032ACD32A88C5D600592045 /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
 		C032ACD52A88C5FE00592045 /* UIStackView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extension.swift"; sourceTree = "<group>"; };
@@ -205,8 +205,8 @@
 		C00F2E032A7CD419004729B9 /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
-				C00F2E042A7CD47D004729B9 /* Protocol+UIViewController.swift */,
-				C0069AE42A7CD8DD005E8128 /* Protocol+CollectionViewCell.swift */,
+				C00F2E042A7CD47D004729B9 /* BaseViewControllerProtocol.swift */,
+				C0069AE42A7CD8DD005E8128 /* BaseCellProtocol.swift */,
 				C032ACD12A88C38D00592045 /* ReusableViewProtocol.swift */,
 			);
 			path = Protocol;
@@ -292,11 +292,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C0069AE52A7CD8DD005E8128 /* Protocol+CollectionViewCell.swift in Sources */,
+				C0069AE52A7CD8DD005E8128 /* BaseCellProtocol.swift in Sources */,
 				C0A405052A7F763600C7C1CE /* SettingVC.swift in Sources */,
 				C032ACD22A88C38D00592045 /* ReusableViewProtocol.swift in Sources */,
 				C0069AFF2A7E39BD005E8128 /* MainVC.swift in Sources */,
-				C00F2E052A7CD47D004729B9 /* Protocol+UIViewController.swift in Sources */,
+				C00F2E052A7CD47D004729B9 /* BaseViewControllerProtocol.swift in Sources */,
 				C032ACD82A88C64600592045 /* UICollectionView+Extension.swift in Sources */,
 				C0A4050D2A7F7EAA00C7C1CE /* SettingInfo.swift in Sources */,
 				C00F2DF22A7CBAAC004729B9 /* SelectTamagotchiVC.swift in Sources */,

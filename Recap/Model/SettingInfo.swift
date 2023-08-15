@@ -9,7 +9,7 @@ import Foundation
 
 struct SettingInfo {
     let list: [Setting] = [
-        Setting(type: .name, subTitle: "\(UserDefaults.userInfo.name)"),
+        Setting(type: .name, subTitle: UserDefaults.userInfo.name),
         Setting(type: .tamagotchi),
         Setting(type: .reset)
     ]
