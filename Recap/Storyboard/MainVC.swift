@@ -9,6 +9,12 @@ import UIKit
 
 class MainVC: UIViewController, BaseViewControllerProtocol {
     
+    enum GrothError: Error {
+        case emptyTamagotchi
+        case isNotInt
+        case overLimit
+    }
+    
     enum FeedType {
         case rice
         case water
@@ -70,51 +76,69 @@ class MainVC: UIViewController, BaseViewControllerProtocol {
     }
     
     @IBAction func riceButtonClicked(_ sender: UIButton) {
-        if selectedTamagotchi != nil {
-            if riceTextField.text?.count ?? 0 > 0 {
-                let input = Int(riceTextField.text!) ?? 0
-                if input > 99 {
-                    showAlert(title: "경고", msg: FeedType.rice.errorMsg, ok: "확인")
-                    riceTextField.text = nil
-                    return
-                } else {
-                    selectedTamagotchi!.rice += Int(riceTextField.text!) ?? 0
-                    tamagotchiInfoLabel.text = selectedTamagotchi?.info
-                    riceTextField.text = nil
-                }
-            } else {
-                selectedTamagotchi!.rice += 1
+        if riceTextField.text!.isEmpty {
+            selectedTamagotchi!.rice += 1
+            tamagotchiInfoLabel.text = selectedTamagotchi?.info
+        } else {
+            do {
+                let _ = try checkGrothInput(tamagotchi: selectedTamagotchi, input: riceTextField.text!, type: .rice)
+                selectedTamagotchi!.rice += Int(riceTextField.text!) ?? 0
                 tamagotchiInfoLabel.text = selectedTamagotchi?.info
+                riceTextField.text = nil
+            } catch GrothError.emptyTamagotchi {
+                showAlert(title: "오류", msg: "다마고치 정보가 없어요", ok: "확인")
+            } catch {
+                showAlert(title: "경고", msg: FeedType.rice.errorMsg, ok: "확인")
+                riceTextField.text = nil
             }
-            
-            updateRandomStory()
-            UserDefaults.userInfo.tamagotchi = selectedTamagotchi
-            tamagotchiImageView.image = UIImage(named: selectedTamagotchi!.imgName)
         }
+        updateRandomStory()
+        UserDefaults.userInfo.tamagotchi = selectedTamagotchi
+        tamagotchiImageView.image = UIImage(named: selectedTamagotchi!.imgName)
     }
     
     @IBAction func waterButtonClicked(_ sender: UIButton) {
-        if selectedTamagotchi != nil {
-            if waterTextField.text?.count ?? 0 > 0 {
-                let input = Int(waterTextField.text!) ?? 0
-                if input > 49 {
-                    showAlert(title: "경고", msg: FeedType.water.errorMsg, ok: "확인")
-                    waterTextField.text = nil
-                    return
-                } else {
-                    selectedTamagotchi!.water += Int(waterTextField.text!) ?? 0
-                    tamagotchiInfoLabel.text = selectedTamagotchi?.info
-                    waterTextField.text = nil
-                }
-            } else {
-                selectedTamagotchi!.water += 1
+        if waterTextField.text!.isEmpty {
+            selectedTamagotchi!.water += 1
+            tamagotchiInfoLabel.text = selectedTamagotchi?.info
+        } else {
+            do {
+                let _ = try checkGrothInput(tamagotchi: selectedTamagotchi, input: waterTextField.text!, type: .water)
+                selectedTamagotchi!.water += Int(waterTextField.text!) ?? 0
                 tamagotchiInfoLabel.text = selectedTamagotchi?.info
+                waterTextField.text = nil
+            } catch GrothError.emptyTamagotchi {
+                showAlert(title: "오류", msg: "다마고치 정보가 없어요", ok: "확인")
+            } catch {
+                showAlert(title: "경고", msg: FeedType.water.errorMsg, ok: "확인")
+                waterTextField.text = nil
             }
-            
-            updateRandomStory()
-            UserDefaults.userInfo.tamagotchi = selectedTamagotchi
-            tamagotchiImageView.image = UIImage(named: selectedTamagotchi!.imgName)
         }
+        updateRandomStory()
+        UserDefaults.userInfo.tamagotchi = selectedTamagotchi
+        tamagotchiImageView.image = UIImage(named: selectedTamagotchi!.imgName)
+    }
+    
+    // 밥먹기, 물먹기 error 핸들링
+    func checkGrothInput(tamagotchi: Tamagotchi?, input: String, type: FeedType) throws -> Bool {
+        guard tamagotchi != nil else {
+            throw GrothError.emptyTamagotchi
+        }
+        guard Int(input) != nil else {
+            throw GrothError.isNotInt
+        }
+        
+        switch type {
+        case .rice:
+            guard Int(input) ?? 0 < 100 else {
+                throw GrothError.overLimit
+            }
+        case .water:
+            guard Int(input) ?? 0 < 50 else {
+                throw GrothError.overLimit
+            }
+        }
+        return true
     }
     
     func configNavigationBar() {
