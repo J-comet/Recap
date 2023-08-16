@@ -56,6 +56,11 @@ class MainVC: UIViewController, BaseViewControllerProtocol {
         configVC()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        view.endEditing(true)
+    }
+    
     override func awakeAfter(using coder: NSCoder) -> Any? {
         navigationItem.backButtonDisplayMode = .minimal
         return super.awakeAfter(using: coder)

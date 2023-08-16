@@ -11,6 +11,11 @@ class ChangeNameVC: UIViewController, BaseViewControllerProtocol {
     
     @IBOutlet var nameTextField: UITextField!
     
+    enum SaveNameError: Error {
+        case emptyString
+        case limit
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         designVC()
@@ -54,15 +59,27 @@ class ChangeNameVC: UIViewController, BaseViewControllerProtocol {
     }
     
     private func saveUserName(inputText: String) {
-        switch inputText.count {
-        case 0:
-            showAlert(title: "", msg: "이름을 입력해주세요", ok: "확인")
-        case 2...6:
+        do {
+            let _ = try checkNameInput(text: inputText)
             UserDefaults.userInfo.name = inputText
             navigationController?.popViewController(animated: true)
-        default:
-            showAlert(title: "", msg: "2글자에서 6글자이하로 입력해주세요", ok: "확인")
+        } catch SaveNameError.emptyString {
+            showAlert(title: "이름", msg: "이름을 입력해주세요", ok: "확인")
+        } catch {
+            showAlert(title: "이름", msg: "2글자에서 6글자이하로 입력해주세요", ok: "확인")
         }
+    }
+    
+    private func checkNameInput(text: String) throws -> Bool {
+        guard !(text.isEmpty) else {
+            throw SaveNameError.emptyString
+        }
+        
+        guard 1 < text.count && text.count < 7 else {
+            throw SaveNameError.limit
+        }
+        
+        return true
     }
 }
 
