@@ -85,8 +85,7 @@ extension SelectTamagotchiVC: UICollectionViewDelegate, UICollectionViewDataSour
         }
         
         let sb = UIStoryboard(name: StoryBoardId.Main.rawValue, bundle: nil)
-        let vc = sb.instantiateViewController(withIdentifier: PopupSelectTamagotchiVC.identifier) as? PopupSelectTamagotchiVC
-        guard let vc else { return }
+        guard let vc = sb.instantiateViewController(withIdentifier: PopupSelectTamagotchiVC.identifier) as? PopupSelectTamagotchiVC else { return }
         
         vc.selectedTamagotchi = row
     

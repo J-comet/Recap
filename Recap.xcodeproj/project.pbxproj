@@ -23,6 +23,7 @@
 		C00F2DF72A7CBAAD004729B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C00F2DF62A7CBAAD004729B9 /* Assets.xcassets */; };
 		C00F2DFA2A7CBAAD004729B9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C00F2DF82A7CBAAD004729B9 /* LaunchScreen.storyboard */; };
 		C00F2E052A7CD47D004729B9 /* BaseViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00F2E042A7CD47D004729B9 /* BaseViewControllerProtocol.swift */; };
+		C02E179C2A9093B2001ABEC9 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02E179B2A9093B2001ABEC9 /* NotificationManager.swift */; };
 		C032ACD22A88C38D00592045 /* ReusableViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C032ACD12A88C38D00592045 /* ReusableViewProtocol.swift */; };
 		C032ACD42A88C5D600592045 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C032ACD32A88C5D600592045 /* UILabel+Extension.swift */; };
 		C032ACD62A88C5FE00592045 /* UIStackView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C032ACD52A88C5FE00592045 /* UIStackView+Extension.swift */; };
@@ -65,6 +66,7 @@
 		C00F2DF92A7CBAAD004729B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C00F2DFB2A7CBAAD004729B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C00F2E042A7CD47D004729B9 /* BaseViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewControllerProtocol.swift; sourceTree = "<group>"; };
+		C02E179B2A9093B2001ABEC9 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		C032ACD12A88C38D00592045 /* ReusableViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableViewProtocol.swift; sourceTree = "<group>"; };
 		C032ACD32A88C5D600592045 /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
 		C032ACD52A88C5FE00592045 /* UIStackView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extension.swift"; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 		C00F2DEC2A7CBAAC004729B9 /* Recap */ = {
 			isa = PBXGroup;
 			children = (
+				C02E179A2A909398001ABEC9 /* Util */,
 				C052F1702A8CB18F0008C7A6 /* View */,
 				C0069B002A7E515D005E8128 /* Enum */,
 				C0069AE92A7CF026005E8128 /* Extension */,
@@ -213,6 +216,14 @@
 				C032ACD12A88C38D00592045 /* ReusableViewProtocol.swift */,
 			);
 			path = Protocol;
+			sourceTree = "<group>";
+		};
+		C02E179A2A909398001ABEC9 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				C02E179B2A9093B2001ABEC9 /* NotificationManager.swift */,
+			);
+			path = Util;
 			sourceTree = "<group>";
 		};
 		C052F1702A8CB18F0008C7A6 /* View */ = {
@@ -325,6 +336,7 @@
 				C0A405082A7F7BF600C7C1CE /* SettingTableViewCell.swift in Sources */,
 				C0A4050F2A7F8AC900C7C1CE /* ChangeNameVC.swift in Sources */,
 				C0069AF32A7E079D005E8128 /* PopupSelectTamagotchiVC.swift in Sources */,
+				C02E179C2A9093B2001ABEC9 /* NotificationManager.swift in Sources */,
 				C0069AE22A7CD720005E8128 /* StartCollectionViewCell.swift in Sources */,
 				C0069AEF2A7E037C005E8128 /* TamagotchiInfo.swift in Sources */,
 				C032ACD62A88C5FE00592045 /* UIStackView+Extension.swift in Sources */,
