@@ -41,10 +41,11 @@ class TutorialVC: UIViewController, BaseViewControllerProtocol {
         
         if pagerControl.currentPage == tutorialInfo.list.count - 1 {
             NotificationManager.shared.authorization {
+                // 최초 앱 실행후 다마고치 선택안하고 앱 종료한 유저
                 NotificationManager.shared.pushScheduledByHour(
                     title: "다마고치",
-                    body: "하루에 한번은 밥과 물을 챙겨주세요",
-                    hour: 8,
+                    body: "귀여운 다마고치가 당신을 기다리고 있어요",
+                    hour: NotificationManager.hour.mainSchedule.rawValue,
                     identifier: NotificationManager.identifier.schedule.rawValue
                 )
             } endHandler: {

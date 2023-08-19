@@ -91,6 +91,14 @@ class PopupSelectTamagotchiVC: UIViewController, BaseViewControllerProtocol {
         
         // 처음 시작유저
         if UserDefaults.userInfo.tamagotchi == nil {
+            // 다마고치 선택한 유저 푸시 메시지 수정
+            NotificationManager.shared.pushScheduledByHour(
+                title: "다마고치",
+                body: "\(UserDefaults.userInfo.name)님 하루에 한번은 밥과 물을 주세요.",
+                hour: NotificationManager.hour.mainSchedule.rawValue,
+                identifier: NotificationManager.identifier.schedule.rawValue
+            )
+            
             UserDefaults.userInfo.tamagotchi = selectedTamagotchi
             vc.selectedTamagotchi = selectedTamagotchi
         } else {

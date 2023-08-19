@@ -16,6 +16,10 @@ class NotificationManager {
     case schedule
     }
     
+    enum hour: Int {
+        case mainSchedule = 8
+    }
+    
     func authorization(
         successHandler: @escaping () -> Void,
         endHandler: @escaping () -> Void
