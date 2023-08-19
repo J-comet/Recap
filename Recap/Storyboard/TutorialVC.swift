@@ -40,34 +40,28 @@ class TutorialVC: UIViewController, BaseViewControllerProtocol {
     @IBAction func startLabelClicked(_ sender: UITapGestureRecognizer) {
         
         if pagerControl.currentPage == tutorialInfo.list.count - 1 {
-            
-            UNUserNotificationCenter.current().requestAuthorization(
-                options: [.alert, .sound, .badge]) { success, error in
-                    print(success, error)
-                    if success {
-                        NotificationManager.shared.pushScheduledByHour(
-                            title: "다마고치",
-                            body: "하루에 한번은 밥과 물을 챙겨주세요",
-                            hour: 8,
-                            identifier: NotificationManager.identifier.schedule.rawValue
-                        )
+            NotificationManager.shared.authorization {
+                NotificationManager.shared.pushScheduledByHour(
+                    title: "다마고치",
+                    body: "하루에 한번은 밥과 물을 챙겨주세요",
+                    hour: 8,
+                    identifier: NotificationManager.identifier.schedule.rawValue
+                )
+            } endHandler: {
+                DispatchQueue.main.async {
+                    print("시작하기")
+                    UserDefaults.isLaunched = false
+                    let sb = UIStoryboard(name: StoryBoardId.Main.rawValue, bundle: nil)
+                    guard let vc = sb.instantiateViewController(withIdentifier: SelectTamagotchiVC.identifier) as? SelectTamagotchiVC else {
+                        return
                     }
                     
-                    DispatchQueue.main.async {
-                        print("시작하기")
-                        UserDefaults.isLaunched = false
-                        let sb = UIStoryboard(name: StoryBoardId.Main.rawValue, bundle: nil)
-                        guard let vc = sb.instantiateViewController(withIdentifier: SelectTamagotchiVC.identifier) as? SelectTamagotchiVC else {
-                            return
-                        }
-                        
-                        let nav = UINavigationController(rootViewController: vc)
-                        nav.modalPresentationStyle = .fullScreen
-                        nav.modalTransitionStyle = .flipHorizontal
-                        self.present(nav, animated: true)
-                    }
-                    
+                    let nav = UINavigationController(rootViewController: vc)
+                    nav.modalPresentationStyle = .fullScreen
+                    nav.modalTransitionStyle = .flipHorizontal
+                    self.present(nav, animated: true)
                 }
+            }
 
         } else {
             currentPage += 1
