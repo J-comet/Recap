@@ -23,15 +23,8 @@ class NotificationManager {
         notificationCenter.requestAuthorization(
             options: [.alert, .sound, .badge]) { success, error in
                 print(success, error)
-                
                 if success {
                     successHandler()
-                    NotificationManager.shared.pushScheduledByHour(
-                        title: "다마고치",
-                        body: "하루에 한번은 밥과 물을 챙겨주세요",
-                        hour: 8,
-                        identifier: NotificationManager.identifier.schedule.rawValue
-                    )
                 }
                 endHandler()
             }
