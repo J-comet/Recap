@@ -67,11 +67,10 @@ class MainVC: UIViewController, BaseViewControllerProtocol {
     }
     
     @objc func settingButtonClicked(_ sender: UIBarButtonItem) {
-        NotificationManager.shared.pushTest()
-        
-//        let sb = UIStoryboard(name: StoryBoardId.Main.rawValue, bundle: nil)
-//        guard let vc = sb.instantiateViewController(withIdentifier: SettingVC.identifier) as? SettingVC else { return }
-//        navigationController?.pushViewController(vc, animated: true)
+//        NotificationManager.shared.pushTest()
+        let sb = UIStoryboard(name: StoryBoardId.Main.rawValue, bundle: nil)
+        guard let vc = sb.instantiateViewController(withIdentifier: SettingVC.identifier) as? SettingVC else { return }
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     //    @IBAction func bottomDoneClicked(_ sender: UIButton) {
