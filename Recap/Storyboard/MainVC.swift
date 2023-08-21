@@ -243,9 +243,9 @@ class MainVC: UIViewController, BaseViewControllerProtocol {
     }
     
     private func designButton(outlet button: UIButton, type: FeedType) {
-        button.layer.cornerRadius = 8
-        button.layer.borderWidth = 1
-        button.layer.borderColor = MainColor.fontOrStroke.value.cgColor
+//        button.layer.cornerRadius = 8
+//        button.layer.borderWidth = 1
+//        button.layer.borderColor = MainColor.fontOrStroke.value.cgColor
         
         var attString = AttributedString(type.buttonTitle)
         attString.font = .systemFont(ofSize: 14, weight: .medium)

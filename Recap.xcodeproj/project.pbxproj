@@ -32,6 +32,7 @@
 		C032ACDC2A88C6BD00592045 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C032ACDB2A88C6BD00592045 /* UIViewController+Extension.swift */; };
 		C032ACDE2A88C6E100592045 /* UserDefaults+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C032ACDD2A88C6E100592045 /* UserDefaults+Extension.swift */; };
 		C052F1722A8CB1C90008C7A6 /* DisablePasteTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C052F1712A8CB1C90008C7A6 /* DisablePasteTextField.swift */; };
+		C05B7EEA2A935310001808C5 /* FeedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05B7EE92A935310001808C5 /* FeedButton.swift */; };
 		C0A405002A7EBF3200C7C1CE /* TamagotchiRandomStory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A404FF2A7EBF3200C7C1CE /* TamagotchiRandomStory.swift */; };
 		C0A405032A7F517C00C7C1CE /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = C0A405022A7F517C00C7C1CE /* IQKeyboardManagerSwift */; };
 		C0A405052A7F763600C7C1CE /* SettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A405042A7F763600C7C1CE /* SettingVC.swift */; };
@@ -75,6 +76,7 @@
 		C032ACDB2A88C6BD00592045 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		C032ACDD2A88C6E100592045 /* UserDefaults+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extension.swift"; sourceTree = "<group>"; };
 		C052F1712A8CB1C90008C7A6 /* DisablePasteTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisablePasteTextField.swift; sourceTree = "<group>"; };
+		C05B7EE92A935310001808C5 /* FeedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedButton.swift; sourceTree = "<group>"; };
 		C0A404FF2A7EBF3200C7C1CE /* TamagotchiRandomStory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TamagotchiRandomStory.swift; sourceTree = "<group>"; };
 		C0A405042A7F763600C7C1CE /* SettingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingVC.swift; path = Recap/Storyboard/SettingVC.swift; sourceTree = SOURCE_ROOT; };
 		C0A405062A7F7BF600C7C1CE /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
@@ -230,6 +232,7 @@
 			isa = PBXGroup;
 			children = (
 				C052F1712A8CB1C90008C7A6 /* DisablePasteTextField.swift */,
+				C05B7EE92A935310001808C5 /* FeedButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -341,6 +344,7 @@
 				C0069AEF2A7E037C005E8128 /* TamagotchiInfo.swift in Sources */,
 				C032ACD62A88C5FE00592045 /* UIStackView+Extension.swift in Sources */,
 				C0A405002A7EBF3200C7C1CE /* TamagotchiRandomStory.swift in Sources */,
+				C05B7EEA2A935310001808C5 /* FeedButton.swift in Sources */,
 				C032ACD42A88C5D600592045 /* UILabel+Extension.swift in Sources */,
 				C0A4054E2A80C73F00C7C1CE /* TutorialInfo.swift in Sources */,
 				C032ACDE2A88C6E100592045 /* UserDefaults+Extension.swift in Sources */,
