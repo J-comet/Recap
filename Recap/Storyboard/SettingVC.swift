@@ -75,25 +75,22 @@ extension SettingVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let row = list[indexPath.row]
-        let sb = UIStoryboard(name: StoryBoardId.Main.rawValue, bundle: nil)
         
         switch row.type {
         case .name:
-            guard let vc = sb.instantiateViewController(withIdentifier: ChangeNameVC.identifier) as? ChangeNameVC else { return }
-            navigationController?.pushViewController(vc, animated: true)
+            self.transition(viewController: ChangeNameVC.self, style: .push, storyboard: StoryBoardId.Main.rawValue)
         case .tamagotchi:
-            guard let vc = sb.instantiateViewController(withIdentifier: SelectTamagotchiVC.identifier) as? SelectTamagotchiVC else  { return }
-            navigationController?.pushViewController(vc, animated: true)
+            self.transition(viewController: SelectTamagotchiVC.self, style: .push, storyboard: StoryBoardId.Main.rawValue)
         case .reset:
             showAlert(title: "데이터 초기화", msg: "정말 다시 처음부터 시작하실 건가용?", ok: "웅", no: "아냐!") {(action) in
                 UserDefaults.userInfo = UserInfo(name: "대장", tamagotchi: nil)
-                guard let vc = sb.instantiateViewController(withIdentifier: SelectTamagotchiVC.identifier) as? SelectTamagotchiVC else {
-                    return
-                }
-                let nav = UINavigationController(rootViewController: vc)
-                nav.modalPresentationStyle = .fullScreen
-                nav.modalTransitionStyle = .crossDissolve
-                self.present(nav, animated: true)
+                
+                self.transition(
+                    viewController: SelectTamagotchiVC.self,
+                    style: .presentFulllNavigation,
+                    storyboard: StoryBoardId.Main.rawValue,
+                    animStyle: .crossDissolve
+                )
             }
         }
         tableView.reloadRows(at: [indexPath], with: .fade)

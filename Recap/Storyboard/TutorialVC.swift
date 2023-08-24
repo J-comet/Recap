@@ -52,15 +52,7 @@ class TutorialVC: UIViewController, BaseViewControllerProtocol {
                 DispatchQueue.main.async {
                     print("시작하기")
                     UserDefaults.isLaunched = false
-                    let sb = UIStoryboard(name: StoryBoardId.Main.rawValue, bundle: nil)
-                    guard let vc = sb.instantiateViewController(withIdentifier: SelectTamagotchiVC.identifier) as? SelectTamagotchiVC else {
-                        return
-                    }
-                    
-                    let nav = UINavigationController(rootViewController: vc)
-                    nav.modalPresentationStyle = .fullScreen
-                    nav.modalTransitionStyle = .flipHorizontal
-                    self.present(nav, animated: true)
+                    self.transition(viewController: SelectTamagotchiVC.self, style: .presentFulllNavigation, storyboard: StoryBoardId.Main.rawValue)
                 }
             }
 
