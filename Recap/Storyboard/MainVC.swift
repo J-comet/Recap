@@ -46,13 +46,27 @@ class MainVC: UIViewController, BaseViewControllerProtocol {
         super.viewDidLoad()
         designVC()
         configNavigationBar()
+        title = "\(UserDefaults.userInfo.name)님의 다마고치"
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(changeNicknameNotificationObserver),
+            name: NSNotification.Name(NotificationName.changeName.rawValue),
+            object: nil
+        )
+    }
+    
+    @objc
+    func changeNicknameNotificationObserver(notification: NSNotification) {
+        if let nickname = notification.userInfo?["nickname"] as? String {
+            title = "\(nickname)님의 다마고치"
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         updateRandomStory()
         
-        title = "\(UserDefaults.userInfo.name)님의 다마고치"
+//        title = "\(UserDefaults.userInfo.name)님의 다마고치"
         configVC()
     }
     

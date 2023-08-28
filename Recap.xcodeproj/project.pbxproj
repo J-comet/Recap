@@ -23,6 +23,7 @@
 		C00F2DF72A7CBAAD004729B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C00F2DF62A7CBAAD004729B9 /* Assets.xcassets */; };
 		C00F2DFA2A7CBAAD004729B9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C00F2DF82A7CBAAD004729B9 /* LaunchScreen.storyboard */; };
 		C00F2E052A7CD47D004729B9 /* BaseViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00F2E042A7CD47D004729B9 /* BaseViewControllerProtocol.swift */; };
+		C01F3ABB2A9CCD5800285822 /* NotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01F3ABA2A9CCD5800285822 /* NotificationName.swift */; };
 		C02E179C2A9093B2001ABEC9 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02E179B2A9093B2001ABEC9 /* NotificationManager.swift */; };
 		C032ACD22A88C38D00592045 /* ReusableViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C032ACD12A88C38D00592045 /* ReusableViewProtocol.swift */; };
 		C032ACD42A88C5D600592045 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C032ACD32A88C5D600592045 /* UILabel+Extension.swift */; };
@@ -67,6 +68,7 @@
 		C00F2DF92A7CBAAD004729B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C00F2DFB2A7CBAAD004729B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C00F2E042A7CD47D004729B9 /* BaseViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewControllerProtocol.swift; sourceTree = "<group>"; };
+		C01F3ABA2A9CCD5800285822 /* NotificationName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationName.swift; sourceTree = "<group>"; };
 		C02E179B2A9093B2001ABEC9 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		C032ACD12A88C38D00592045 /* ReusableViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableViewProtocol.swift; sourceTree = "<group>"; };
 		C032ACD32A88C5D600592045 /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				C0069B012A7E518A005E8128 /* Storyboard+Enum.swift */,
+				C01F3ABA2A9CCD5800285822 /* NotificationName.swift */,
 			);
 			path = Enum;
 			sourceTree = "<group>";
@@ -318,6 +321,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C0069AE52A7CD8DD005E8128 /* BaseCellProtocol.swift in Sources */,
+				C01F3ABB2A9CCD5800285822 /* NotificationName.swift in Sources */,
 				C0A405052A7F763600C7C1CE /* SettingVC.swift in Sources */,
 				C032ACD22A88C38D00592045 /* ReusableViewProtocol.swift in Sources */,
 				C0069AFF2A7E39BD005E8128 /* MainVC.swift in Sources */,

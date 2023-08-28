@@ -8,7 +8,7 @@
 import Foundation
 
 struct SettingInfo {
-    let list: [Setting] = [
+    static var list: [Setting] = [
         Setting(type: .name, subTitle: UserDefaults.userInfo.name),
         Setting(type: .tamagotchi),
         Setting(type: .reset)

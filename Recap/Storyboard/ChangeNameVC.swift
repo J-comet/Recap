@@ -62,6 +62,14 @@ class ChangeNameVC: UIViewController, BaseViewControllerProtocol {
         do {
             let _ = try checkNameInput(text: inputText)
             UserDefaults.userInfo.name = inputText
+            
+            // 노티피케이션으로 값 전달
+            NotificationCenter.default.post(
+                name: NSNotification.Name(NotificationName.changeName.rawValue),
+                object: nil,
+                userInfo: ["nickname": inputText]
+            )
+            
             navigationController?.popViewController(animated: true)
         } catch SaveNameError.emptyString {
             showAlert(title: "이름", msg: "이름을 입력해주세요", ok: "확인")

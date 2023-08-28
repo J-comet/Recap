@@ -11,7 +11,7 @@ class SettingVC: UIViewController, BaseViewControllerProtocol {
     
     @IBOutlet var settingTableView: UITableView!
     
-    var list: [Setting] = [] {
+    var list: [Setting] = SettingInfo.list {
         didSet {
             settingTableView.reloadData()
         }
@@ -22,11 +22,31 @@ class SettingVC: UIViewController, BaseViewControllerProtocol {
         designVC()
         configVC()
         configNavigationBar()
+        
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(changeNicknameNotificationObserver),
+            name: NSNotification.Name(NotificationName.changeName.rawValue),
+            object: nil
+        )
+    }
+    
+    @objc
+    func changeNicknameNotificationObserver(notification: NSNotification) {
+        if let nickname = notification.userInfo?["nickname"] as? String {
+            SettingInfo.list.removeAll()
+            list = [
+                Setting(type: .name, subTitle: nickname),
+                Setting(type: .tamagotchi),
+                Setting(type: .reset)
+            ]
+            SettingInfo.list.append(contentsOf: list)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        list = SettingInfo().list
+//        list = SettingInfo().list
     }
 
     func designVC() {
