@@ -7,23 +7,90 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C0069AE22A7CD720005E8128 /* StartCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0069AE02A7CD720005E8128 /* StartCollectionViewCell.swift */; };
+		C0069AE32A7CD720005E8128 /* StartCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0069AE12A7CD720005E8128 /* StartCollectionViewCell.xib */; };
+		C0069AE52A7CD8DD005E8128 /* BaseCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0069AE42A7CD8DD005E8128 /* BaseCellProtocol.swift */; };
+		C0069AE82A7CDD88005E8128 /* Tamagotchi.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0069AE72A7CDD88005E8128 /* Tamagotchi.swift */; };
+		C0069AEF2A7E037C005E8128 /* TamagotchiInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0069AEE2A7E037C005E8128 /* TamagotchiInfo.swift */; };
+		C0069AF32A7E079D005E8128 /* PopupSelectTamagotchiVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0069AF22A7E079D005E8128 /* PopupSelectTamagotchiVC.swift */; };
+		C0069AFD2A7E3911005E8128 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0069AFC2A7E3911005E8128 /* UserInfo.swift */; };
+		C0069AFF2A7E39BD005E8128 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0069AFE2A7E39BD005E8128 /* MainVC.swift */; };
+		C0069B022A7E518A005E8128 /* Storyboard+Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0069B012A7E518A005E8128 /* Storyboard+Enum.swift */; };
 		C00F2DEE2A7CBAAC004729B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00F2DED2A7CBAAC004729B9 /* AppDelegate.swift */; };
 		C00F2DF02A7CBAAC004729B9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00F2DEF2A7CBAAC004729B9 /* SceneDelegate.swift */; };
-		C00F2DF22A7CBAAC004729B9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00F2DF12A7CBAAC004729B9 /* ViewController.swift */; };
+		C00F2DF22A7CBAAC004729B9 /* SelectTamagotchiVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00F2DF12A7CBAAC004729B9 /* SelectTamagotchiVC.swift */; };
 		C00F2DF52A7CBAAC004729B9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C00F2DF32A7CBAAC004729B9 /* Main.storyboard */; };
 		C00F2DF72A7CBAAD004729B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C00F2DF62A7CBAAD004729B9 /* Assets.xcassets */; };
 		C00F2DFA2A7CBAAD004729B9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C00F2DF82A7CBAAD004729B9 /* LaunchScreen.storyboard */; };
+		C00F2E052A7CD47D004729B9 /* BaseViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00F2E042A7CD47D004729B9 /* BaseViewControllerProtocol.swift */; };
+		C01F3ABB2A9CCD5800285822 /* NotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01F3ABA2A9CCD5800285822 /* NotificationName.swift */; };
+		C02E179C2A9093B2001ABEC9 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02E179B2A9093B2001ABEC9 /* NotificationManager.swift */; };
+		C032ACD22A88C38D00592045 /* ReusableViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C032ACD12A88C38D00592045 /* ReusableViewProtocol.swift */; };
+		C032ACD42A88C5D600592045 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C032ACD32A88C5D600592045 /* UILabel+Extension.swift */; };
+		C032ACD62A88C5FE00592045 /* UIStackView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C032ACD52A88C5FE00592045 /* UIStackView+Extension.swift */; };
+		C032ACD82A88C64600592045 /* UICollectionView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C032ACD72A88C64600592045 /* UICollectionView+Extension.swift */; };
+		C032ACDA2A88C69A00592045 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C032ACD92A88C69A00592045 /* UIColor+Extension.swift */; };
+		C032ACDC2A88C6BD00592045 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C032ACDB2A88C6BD00592045 /* UIViewController+Extension.swift */; };
+		C032ACDE2A88C6E100592045 /* UserDefaults+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C032ACDD2A88C6E100592045 /* UserDefaults+Extension.swift */; };
+		C052F1722A8CB1C90008C7A6 /* DisablePasteTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C052F1712A8CB1C90008C7A6 /* DisablePasteTextField.swift */; };
+		C05B7EEA2A935310001808C5 /* FeedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05B7EE92A935310001808C5 /* FeedButton.swift */; };
+		C0A405002A7EBF3200C7C1CE /* TamagotchiRandomStory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A404FF2A7EBF3200C7C1CE /* TamagotchiRandomStory.swift */; };
+		C0A405032A7F517C00C7C1CE /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = C0A405022A7F517C00C7C1CE /* IQKeyboardManagerSwift */; };
+		C0A405052A7F763600C7C1CE /* SettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A405042A7F763600C7C1CE /* SettingVC.swift */; };
+		C0A405082A7F7BF600C7C1CE /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A405062A7F7BF600C7C1CE /* SettingTableViewCell.swift */; };
+		C0A405092A7F7BF600C7C1CE /* SettingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0A405072A7F7BF600C7C1CE /* SettingTableViewCell.xib */; };
+		C0A4050B2A7F7C9B00C7C1CE /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A4050A2A7F7C9B00C7C1CE /* Setting.swift */; };
+		C0A4050D2A7F7EAA00C7C1CE /* SettingInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A4050C2A7F7EAA00C7C1CE /* SettingInfo.swift */; };
+		C0A4050F2A7F8AC900C7C1CE /* ChangeNameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A4050E2A7F8AC900C7C1CE /* ChangeNameVC.swift */; };
+		C0A405462A80C56800C7C1CE /* TutorialVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A405452A80C56800C7C1CE /* TutorialVC.swift */; };
+		C0A405492A80C66200C7C1CE /* TutorialCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A405472A80C66200C7C1CE /* TutorialCollectionViewCell.swift */; };
+		C0A4054A2A80C66200C7C1CE /* TutorialCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0A405482A80C66200C7C1CE /* TutorialCollectionViewCell.xib */; };
+		C0A4054C2A80C6FA00C7C1CE /* Tutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A4054B2A80C6FA00C7C1CE /* Tutorial.swift */; };
+		C0A4054E2A80C73F00C7C1CE /* TutorialInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A4054D2A80C73F00C7C1CE /* TutorialInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C0069AE02A7CD720005E8128 /* StartCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
+		C0069AE12A7CD720005E8128 /* StartCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StartCollectionViewCell.xib; sourceTree = SOURCE_ROOT; };
+		C0069AE42A7CD8DD005E8128 /* BaseCellProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCellProtocol.swift; sourceTree = "<group>"; };
+		C0069AE72A7CDD88005E8128 /* Tamagotchi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tamagotchi.swift; sourceTree = "<group>"; };
+		C0069AEE2A7E037C005E8128 /* TamagotchiInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TamagotchiInfo.swift; sourceTree = "<group>"; };
+		C0069AF22A7E079D005E8128 /* PopupSelectTamagotchiVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupSelectTamagotchiVC.swift; sourceTree = "<group>"; };
+		C0069AFC2A7E3911005E8128 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
+		C0069AFE2A7E39BD005E8128 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainVC.swift; path = Recap/Storyboard/MainVC.swift; sourceTree = SOURCE_ROOT; };
+		C0069B012A7E518A005E8128 /* Storyboard+Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Storyboard+Enum.swift"; sourceTree = "<group>"; };
 		C00F2DEA2A7CBAAC004729B9 /* Recap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Recap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C00F2DED2A7CBAAC004729B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C00F2DEF2A7CBAAC004729B9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C00F2DF12A7CBAAC004729B9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C00F2DF12A7CBAAC004729B9 /* SelectTamagotchiVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTamagotchiVC.swift; sourceTree = "<group>"; };
 		C00F2DF42A7CBAAC004729B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C00F2DF62A7CBAAD004729B9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C00F2DF92A7CBAAD004729B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C00F2DFB2A7CBAAD004729B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C00F2E042A7CD47D004729B9 /* BaseViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewControllerProtocol.swift; sourceTree = "<group>"; };
+		C01F3ABA2A9CCD5800285822 /* NotificationName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationName.swift; sourceTree = "<group>"; };
+		C02E179B2A9093B2001ABEC9 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		C032ACD12A88C38D00592045 /* ReusableViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableViewProtocol.swift; sourceTree = "<group>"; };
+		C032ACD32A88C5D600592045 /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
+		C032ACD52A88C5FE00592045 /* UIStackView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extension.swift"; sourceTree = "<group>"; };
+		C032ACD72A88C64600592045 /* UICollectionView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extension.swift"; sourceTree = "<group>"; };
+		C032ACD92A88C69A00592045 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		C032ACDB2A88C6BD00592045 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		C032ACDD2A88C6E100592045 /* UserDefaults+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extension.swift"; sourceTree = "<group>"; };
+		C052F1712A8CB1C90008C7A6 /* DisablePasteTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisablePasteTextField.swift; sourceTree = "<group>"; };
+		C05B7EE92A935310001808C5 /* FeedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedButton.swift; sourceTree = "<group>"; };
+		C0A404FF2A7EBF3200C7C1CE /* TamagotchiRandomStory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TamagotchiRandomStory.swift; sourceTree = "<group>"; };
+		C0A405042A7F763600C7C1CE /* SettingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingVC.swift; path = Recap/Storyboard/SettingVC.swift; sourceTree = SOURCE_ROOT; };
+		C0A405062A7F7BF600C7C1CE /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
+		C0A405072A7F7BF600C7C1CE /* SettingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingTableViewCell.xib; sourceTree = "<group>"; };
+		C0A4050A2A7F7C9B00C7C1CE /* Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
+		C0A4050C2A7F7EAA00C7C1CE /* SettingInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingInfo.swift; sourceTree = "<group>"; };
+		C0A4050E2A7F8AC900C7C1CE /* ChangeNameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ChangeNameVC.swift; path = Recap/Storyboard/ChangeNameVC.swift; sourceTree = SOURCE_ROOT; };
+		C0A405452A80C56800C7C1CE /* TutorialVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TutorialVC.swift; path = Recap/Storyboard/TutorialVC.swift; sourceTree = SOURCE_ROOT; };
+		C0A405472A80C66200C7C1CE /* TutorialCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialCollectionViewCell.swift; sourceTree = "<group>"; };
+		C0A405482A80C66200C7C1CE /* TutorialCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TutorialCollectionViewCell.xib; sourceTree = "<group>"; };
+		C0A4054B2A80C6FA00C7C1CE /* Tutorial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tutorial.swift; sourceTree = "<group>"; };
+		C0A4054D2A80C73F00C7C1CE /* TutorialInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,12 +98,63 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0A405032A7F517C00C7C1CE /* IQKeyboardManagerSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C0069ADF2A7CD631005E8128 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				C0069AE02A7CD720005E8128 /* StartCollectionViewCell.swift */,
+				C0069AE12A7CD720005E8128 /* StartCollectionViewCell.xib */,
+				C0A405062A7F7BF600C7C1CE /* SettingTableViewCell.swift */,
+				C0A405072A7F7BF600C7C1CE /* SettingTableViewCell.xib */,
+				C0A405472A80C66200C7C1CE /* TutorialCollectionViewCell.swift */,
+				C0A405482A80C66200C7C1CE /* TutorialCollectionViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		C0069AE62A7CDCC5005E8128 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C0069AE72A7CDD88005E8128 /* Tamagotchi.swift */,
+				C0069AEE2A7E037C005E8128 /* TamagotchiInfo.swift */,
+				C0069AFC2A7E3911005E8128 /* UserInfo.swift */,
+				C0A404FF2A7EBF3200C7C1CE /* TamagotchiRandomStory.swift */,
+				C0A4050A2A7F7C9B00C7C1CE /* Setting.swift */,
+				C0A4050C2A7F7EAA00C7C1CE /* SettingInfo.swift */,
+				C0A4054B2A80C6FA00C7C1CE /* Tutorial.swift */,
+				C0A4054D2A80C73F00C7C1CE /* TutorialInfo.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C0069AE92A7CF026005E8128 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				C032ACD32A88C5D600592045 /* UILabel+Extension.swift */,
+				C032ACD52A88C5FE00592045 /* UIStackView+Extension.swift */,
+				C032ACD72A88C64600592045 /* UICollectionView+Extension.swift */,
+				C032ACD92A88C69A00592045 /* UIColor+Extension.swift */,
+				C032ACDB2A88C6BD00592045 /* UIViewController+Extension.swift */,
+				C032ACDD2A88C6E100592045 /* UserDefaults+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		C0069B002A7E515D005E8128 /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				C0069B012A7E518A005E8128 /* Storyboard+Enum.swift */,
+				C01F3ABA2A9CCD5800285822 /* NotificationName.swift */,
+			);
+			path = Enum;
+			sourceTree = "<group>";
+		};
 		C00F2DE12A7CBAAC004729B9 = {
 			isa = PBXGroup;
 			children = (
@@ -56,15 +174,70 @@
 		C00F2DEC2A7CBAAC004729B9 /* Recap */ = {
 			isa = PBXGroup;
 			children = (
+				C02E179A2A909398001ABEC9 /* Util */,
+				C052F1702A8CB18F0008C7A6 /* View */,
+				C0069B002A7E515D005E8128 /* Enum */,
+				C0069AE92A7CF026005E8128 /* Extension */,
+				C0069AE62A7CDCC5005E8128 /* Model */,
+				C0069ADF2A7CD631005E8128 /* Cell */,
+				C00F2E032A7CD419004729B9 /* Protocol */,
+				C00F2E022A7CD0AE004729B9 /* Storyboard */,
+				C00F2E012A7CD084004729B9 /* VC */,
 				C00F2DED2A7CBAAC004729B9 /* AppDelegate.swift */,
 				C00F2DEF2A7CBAAC004729B9 /* SceneDelegate.swift */,
-				C00F2DF12A7CBAAC004729B9 /* ViewController.swift */,
-				C00F2DF32A7CBAAC004729B9 /* Main.storyboard */,
 				C00F2DF62A7CBAAD004729B9 /* Assets.xcassets */,
 				C00F2DF82A7CBAAD004729B9 /* LaunchScreen.storyboard */,
 				C00F2DFB2A7CBAAD004729B9 /* Info.plist */,
 			);
 			path = Recap;
+			sourceTree = "<group>";
+		};
+		C00F2E012A7CD084004729B9 /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				C0A405452A80C56800C7C1CE /* TutorialVC.swift */,
+				C0A4050E2A7F8AC900C7C1CE /* ChangeNameVC.swift */,
+				C0A405042A7F763600C7C1CE /* SettingVC.swift */,
+				C0069AFE2A7E39BD005E8128 /* MainVC.swift */,
+				C00F2DF12A7CBAAC004729B9 /* SelectTamagotchiVC.swift */,
+				C0069AF22A7E079D005E8128 /* PopupSelectTamagotchiVC.swift */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		C00F2E022A7CD0AE004729B9 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				C00F2DF32A7CBAAC004729B9 /* Main.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		C00F2E032A7CD419004729B9 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				C00F2E042A7CD47D004729B9 /* BaseViewControllerProtocol.swift */,
+				C0069AE42A7CD8DD005E8128 /* BaseCellProtocol.swift */,
+				C032ACD12A88C38D00592045 /* ReusableViewProtocol.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		C02E179A2A909398001ABEC9 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				C02E179B2A9093B2001ABEC9 /* NotificationManager.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		C052F1702A8CB18F0008C7A6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C052F1712A8CB1C90008C7A6 /* DisablePasteTextField.swift */,
+				C05B7EE92A935310001808C5 /* FeedButton.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +256,9 @@
 			dependencies = (
 			);
 			name = Recap;
+			packageProductDependencies = (
+				C0A405022A7F517C00C7C1CE /* IQKeyboardManagerSwift */,
+			);
 			productName = Recap;
 			productReference = C00F2DEA2A7CBAAC004729B9 /* Recap.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +287,9 @@
 				Base,
 			);
 			mainGroup = C00F2DE12A7CBAAC004729B9;
+			packageReferences = (
+				C0A405012A7F517C00C7C1CE /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
+			);
 			productRefGroup = C00F2DEB2A7CBAAC004729B9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -125,8 +304,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0A4054A2A80C66200C7C1CE /* TutorialCollectionViewCell.xib in Resources */,
 				C00F2DFA2A7CBAAD004729B9 /* LaunchScreen.storyboard in Resources */,
+				C0069AE32A7CD720005E8128 /* StartCollectionViewCell.xib in Resources */,
 				C00F2DF72A7CBAAD004729B9 /* Assets.xcassets in Resources */,
+				C0A405092A7F7BF600C7C1CE /* SettingTableViewCell.xib in Resources */,
 				C00F2DF52A7CBAAC004729B9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -138,8 +320,38 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C00F2DF22A7CBAAC004729B9 /* ViewController.swift in Sources */,
+				C0069AE52A7CD8DD005E8128 /* BaseCellProtocol.swift in Sources */,
+				C01F3ABB2A9CCD5800285822 /* NotificationName.swift in Sources */,
+				C0A405052A7F763600C7C1CE /* SettingVC.swift in Sources */,
+				C032ACD22A88C38D00592045 /* ReusableViewProtocol.swift in Sources */,
+				C0069AFF2A7E39BD005E8128 /* MainVC.swift in Sources */,
+				C00F2E052A7CD47D004729B9 /* BaseViewControllerProtocol.swift in Sources */,
+				C052F1722A8CB1C90008C7A6 /* DisablePasteTextField.swift in Sources */,
+				C032ACD82A88C64600592045 /* UICollectionView+Extension.swift in Sources */,
+				C0A4050D2A7F7EAA00C7C1CE /* SettingInfo.swift in Sources */,
+				C00F2DF22A7CBAAC004729B9 /* SelectTamagotchiVC.swift in Sources */,
+				C032ACDA2A88C69A00592045 /* UIColor+Extension.swift in Sources */,
+				C0069AE82A7CDD88005E8128 /* Tamagotchi.swift in Sources */,
+				C0A405462A80C56800C7C1CE /* TutorialVC.swift in Sources */,
+				C0069AFD2A7E3911005E8128 /* UserInfo.swift in Sources */,
+				C0A405492A80C66200C7C1CE /* TutorialCollectionViewCell.swift in Sources */,
+				C0A4050B2A7F7C9B00C7C1CE /* Setting.swift in Sources */,
+				C0A4054C2A80C6FA00C7C1CE /* Tutorial.swift in Sources */,
+				C0069B022A7E518A005E8128 /* Storyboard+Enum.swift in Sources */,
+				C032ACDC2A88C6BD00592045 /* UIViewController+Extension.swift in Sources */,
 				C00F2DEE2A7CBAAC004729B9 /* AppDelegate.swift in Sources */,
+				C0A405082A7F7BF600C7C1CE /* SettingTableViewCell.swift in Sources */,
+				C0A4050F2A7F8AC900C7C1CE /* ChangeNameVC.swift in Sources */,
+				C0069AF32A7E079D005E8128 /* PopupSelectTamagotchiVC.swift in Sources */,
+				C02E179C2A9093B2001ABEC9 /* NotificationManager.swift in Sources */,
+				C0069AE22A7CD720005E8128 /* StartCollectionViewCell.swift in Sources */,
+				C0069AEF2A7E037C005E8128 /* TamagotchiInfo.swift in Sources */,
+				C032ACD62A88C5FE00592045 /* UIStackView+Extension.swift in Sources */,
+				C0A405002A7EBF3200C7C1CE /* TamagotchiRandomStory.swift in Sources */,
+				C05B7EEA2A935310001808C5 /* FeedButton.swift in Sources */,
+				C032ACD42A88C5D600592045 /* UILabel+Extension.swift in Sources */,
+				C0A4054E2A80C73F00C7C1CE /* TutorialInfo.swift in Sources */,
+				C032ACDE2A88C6E100592045 /* UserDefaults+Extension.swift in Sources */,
 				C00F2DF02A7CBAAC004729B9 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -290,11 +502,13 @@
 				DEVELOPMENT_TEAM = SV3K237PCX;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Recap/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "장혜성_다마고치";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -318,11 +532,13 @@
 				DEVELOPMENT_TEAM = SV3K237PCX;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Recap/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "장혜성_다마고치";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -358,6 +574,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C0A405012A7F517C00C7C1CE /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C0A405022A7F517C00C7C1CE /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C0A405012A7F517C00C7C1CE /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C00F2DE22A7CBAAC004729B9 /* Project object */;
 }

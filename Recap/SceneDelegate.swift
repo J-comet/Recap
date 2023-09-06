@@ -13,10 +13,33 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
-        // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
-        // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-        guard let _ = (scene as? UIWindowScene) else { return }
+        
+        // 윈도우를 코드로 다룰 수 있게 변환
+        guard let scene = (scene as? UIWindowScene) else { return }
+        window = UIWindow(windowScene: scene)
+        
+        // 1. 처음 앱 실행한 유저인지 확인
+        // 2. 다마고치를 생성했는 유저인지 확인
+        let isLaunched = UserDefaults.isLaunched
+        print("첫실행 =",isLaunched)
+        print("유저정보 =",UserDefaults.userInfo)
+        
+        let sb = UIStoryboard(name: StoryBoardId.Main.rawValue, bundle: nil)
+        
+        if isLaunched {
+            guard let vc = sb.instantiateViewController(withIdentifier: TutorialVC.identifier) as? TutorialVC else {
+                return
+            }
+            window?.rootViewController = vc
+            window?.makeKeyAndVisible()
+        } else {
+            let vc = UserDefaults.userInfo.tamagotchi == nil ? sb.instantiateViewController(withIdentifier: SelectTamagotchiVC.identifier) as? SelectTamagotchiVC : sb.instantiateViewController(withIdentifier: MainVC.identifier) as? MainVC
+            
+            if let vc {
+                window?.rootViewController = UINavigationController(rootViewController: vc)
+                window?.makeKeyAndVisible()
+            }
+        }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
